@@ -1,0 +1,254 @@
+/*--------------GENERAL STYLES--------------*/
+
+body {
+	background: #000;
+}
+.navbar {
+	background-color: transparent !important;
+	height: 140px;
+    padding-top: 30px;
+    /*border-bottom: 2px solid black;*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+.nav {
+	height: 140px;
+	align-items: baseline;
+    transition: all 0.5s ease;
+}
+.nav-item {
+	height: 45px;
+	margin: 10px;
+}
+.logo {
+	margin-top: 3px;
+	margin-left: 35px;
+	margin-right: 35px;
+}
+.logo img {
+	width: 150px;
+	height: auto;
+}
+.navbar .nav-item .nav-link {
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 15px;
+	letter-spacing: 2px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 200;
+}
+.navbar.small {
+	background-color: rgba(0, 0, 0, 0.95) !important;
+	height: 115px;
+    padding-top: 15px;
+}
+.navbar-brand {
+	display: none;
+}
+.navbar.small .nav {
+	height: 120px;
+}
+
+
+/*-----------MAIN SECTION STYLES----------*/
+
+.main-banner {
+	position: relative;
+	height: 100vh;
+	overflow: hidden;
+}
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgb(2,0,36);
+	background: linear-gradient(0deg, rgba(2,0,36,0) 0%, rgba(0,0,0,0.5) 60%);
+}
+.ticket-button {
+	position: absolute;
+	bottom: 200px;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	border: 2px solid #fff;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 200;
+	background: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	padding: 20px;
+	letter-spacing: 2px;
+}
+.parallax-wrapper {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+.parallax-wrapper .overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.parallax__container {
+  clip: rect(0,auto,auto,0);
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.parallax.before-load {
+  transform: scale(1.1) !important;
+  opacity: 0;
+}
+.parallax {
+  position: fixed;
+  top: 0;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transform: translateZ(0px) !important;
+  width: 100%;
+  opacity: 1;
+  transition: height 0.7s ease, transform 0.7s ease, opacity 0.7s ease;
+}
+/*animation: kenburns 110s infinite linear;*/
+
+/* Rotate is needed for IE, otherwise it is jumpy */
+/*@keyframes kenburns {
+  50% {
+    transform: scale(1.3) rotate(0.04deg);
+  }*/
+/*-----------ABOUT SECTION STYLES----------*/
+
+.about {
+	height: auto;
+	background: #fff;
+}
+.about .text-container {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 40px;
+	text-align: center;
+}
+.about .text-container h1,
+.contact .cartier-list-container h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-align: center;
+	margin-bottom: 30px;
+}
+.image-container {
+	display: flex;
+	justify-content: center;
+}
+figure {
+	width: 250px;
+	height: 250px;
+	overflow: hidden;
+	border-radius: 3px;
+	margin: 10px;
+}
+.first, .second, .third {
+	height: 100%;
+}
+
+/*-----------ABOUT SECTION STYLES----------*/
+.contact {
+	height: auto;
+	background: #000;
+}
+.contact .cartier-list-container {
+	width: 90vw;
+	max-width: 600px;
+	border: 1px solid #fff;
+	padding: 20px;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	margin-top: 50px;
+}
+.contact .cartier-list-container h2,
+.contact .cartier-list-container p {
+	color: #fff;
+	text-align: center;
+}
+.text-input {
+	display: inline;
+	margin: 5px;
+	border: 1px solid #fff;
+	padding: 10px 15px;
+	background: transparent;
+	width: 31%;
+	border-radius: 6px;
+}
+.sign-up-button {
+	display: block;
+	width: 100px;
+	margin: 0 auto;
+	border: 1px solid #fff;
+	padding: 10px;
+	color: #fff;
+	background: transparent;
+	margin-top: 15px;
+	border-radius: 6px;
+}
+/*--------RIPPLE EFFECTS-------*/
+
+#container, #water {
+ 	background-image: url('../img/front_one.jpeg');
+ 	background-position: center bottom;
+ 	background-size: 100%;
+ 	background-repeat: no-repeat;
+}
+#container {
+ 	position: absolute;
+ 	top: calc(50% - 55vh);
+ 	left: calc(50% - 60vw);
+ 	height: 110vh;
+ 	width: 120vw;
+ 	margin-top: -40px;
+}
+#container:after {
+	position: absolute;
+	top: 10%;
+	left: 2.5%;
+	z-index: -1;
+	content: '';
+	display: block;
+	height: 95%;
+	width: 95%;
+	background: #0f0f0f;
+	filter: blur(30px);
+}
+#container #water {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 20vh;
+	filter: url('#turbulence');
+	overflow: hidden;
+}
+@media only screen and (max-width: 991px){
+
+}
+@media only screen and (max-width: 767px){
+	.navbar-brand {
+		display: block;
+	}
+}
+@media only screen and (max-width: 479px){
+
+}
