@@ -25,6 +25,7 @@ body {
 	margin: 10px;
 }
 .logo {
+	height: auto;
 	margin-top: 3px;
 	margin-left: 35px;
 	margin-right: 35px;
@@ -42,8 +43,8 @@ body {
 	font-weight: 200;
 }
 .navbar.small {
-	background-color: rgba(0, 0, 0, 0.95) !important;
-	height: 115px;
+	background-color: rgba(0, 0, 0, 0.8) !important;
+	height: 125px;
     padding-top: 15px;
 }
 .navbar-brand {
@@ -68,7 +69,7 @@ body {
 	width: 100%;
 	height: 100%;
 	background: rgb(2,0,36);
-	background: linear-gradient(0deg, rgba(2,0,36,0) 0%, rgba(0,0,0,0.5) 60%);
+	background: linear-gradient(0deg, rgba(2,0,36,0) 0%, rgba(0,0,0,0.2) 60%);
 }
 .ticket-button {
 	position: absolute;
@@ -193,6 +194,8 @@ figure {
 	background: transparent;
 	width: 31%;
 	border-radius: 6px;
+	caret-color: #fff;
+	color: #fff;
 }
 .sign-up-button {
 	display: block;
@@ -240,6 +243,27 @@ figure {
 	height: 20vh;
 	filter: url('#turbulence');
 	overflow: hidden;
+}
+
+#canvas {
+  /* make the canvas wrapper fits the window */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+.plane {
+  /* define the size of your plane */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.plane img {
+  /* hide the img element */
+  display: none;
+  height: 100%;
 }
 @media only screen and (max-width: 991px){
 
