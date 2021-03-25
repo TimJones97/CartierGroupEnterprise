@@ -71,10 +71,14 @@ function hideNavOnTap(){
 Pace.on("done", function(){
   if ($('.pace-progress').attr('data-progress-text') == '100%'){
   	setTimeout(function(){
-  		$('.pace').removeClass('pace-inactive');
-	    $('.cge_loader').fadeOut(1000);
-	    $('.preloader-white').fadeOut(1000);
-	    $('.pace').fadeOut(1000);
+  		// $('.pace').removeClass('pace-inactive');
+	   //  $('.cge_loader').fadeOut(1000);
+	   //  $('.preloader-white').fadeOut(1000);
+	   //  $('.pace').fadeOut(1000);
+	    // $('.anim_container').addClass('scale_back');
+	    $('.cge_loader').addClass('anim_zoom');
+	    $('.preloader-white').addClass('anim_zoom');
+	    $('.pace').addClass('anim_zoom');
   	}, 1000);
   }
 });
@@ -85,7 +89,11 @@ $(document).ready(function(){
 	setCopyrightYear();
 	hideNavOnTap();
 	createCanvas();
-	new universalParallax().init({
-	    speed: 2.0
-  	});
+	// setTimeout(function(){
+	  $('.parallax-wrapper').paroller({
+	    factor: '0.2',
+	    type: 'foreground',
+	    direction: 'vertical'
+	  }); 
+	// }, 2000);
 });
