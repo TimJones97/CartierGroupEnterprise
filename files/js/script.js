@@ -16,6 +16,14 @@ var webGLCurtain;
 //   }), 0
 // );
 function smallNavOnScroll(){
+	// Check on the navbar on start
+	// var scrollTop = $(document).scrollTop();
+	// if(scrollTop > 5){
+	// 	$('.navbar').addClass('small');
+	// }
+	// else {
+	// 	$('.navbar').removeClass('small');
+	// }
 	$(window).scroll(function(){
 		var scrollTop = $(document).scrollTop();
 		if(scrollTop > 5){
@@ -82,13 +90,51 @@ Pace.on("done", function(){
   	}, 1000);
   }
 });
+$(function() {
+	var Accordion = function(el, multiple) {
+		this.el = el || {};
+		this.multiple = multiple || false;
+
+		// Variables privadas
+		var links = this.el.find('.link');
+		// Evento
+		links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
+	}
+
+	Accordion.prototype.dropdown = function(e) {
+		var $el = e.data.el;
+			$this = $(this),
+			$next = $this.next();
+
+		$next.slideToggle();
+		$this.parent().toggleClass('open');
+
+		if (!e.data.multiple) {
+			$el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+		};
+	}	
+
+	var accordion = new Accordion($('#accordion'), false);
+});
+function checkIfTicketsVisible(){
+	var isVisible = false;
+	$(window).scroll(function(){
+		isTicketElementVisible = $('.package_info').visible(true);
+		if(isTicketElementVisible){
+			setTimeout(function(){
+				$('.package_info').addClass('show');
+			}, 1500);
+		}
+	});
+}
 $(document).ready(function(){
 	// Scroll to top so that WebGL ripple effect loads properly
-	$(document).scrollTop(0);
+	// $(document).scrollTop(0);
 	smallNavOnScroll();
 	setCopyrightYear();
 	hideNavOnTap();
 	createCanvas();
+	checkIfTicketsVisible();
 	// setTimeout(function(){
 	  $('.parallax-wrapper').paroller({
 	    factor: '0.2',

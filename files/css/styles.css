@@ -2,10 +2,18 @@
 
 body {
 	background: #1D1D1D;
+	overflow-x: hidden;
 }
 *:focus,
 *:hover {
 	outline: none !important;
+}
+p {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+}
+ul {
+    padding-inline-start: 0px;
 }
 /*Loader*/
 .preloader-white,
@@ -44,7 +52,7 @@ body {
 	display: block !important;
 }
 .pace .pace-progress {
-    background-color: #000;
+    background-color: #1d1d1d;
 	z-index: -1;
 	transition: all 1s ease;
 }
@@ -52,14 +60,17 @@ body {
 	/*top: -120vh;*/
 	transform: scale(1.3);
 	opacity: 0;
+	pointer-events: none;
 }
 .cge_loader.anim_zoom {
 	transform: scale(1.3);
 	opacity: 0;
+	pointer-events: none;
 }
 .pace.anim_zoom {
 	transform: scale(1.3) rotate(270deg);
 	opacity: 0;
+	pointer-events: none;
 }
 /*Enable for debugging*/
 .preloader-white, .pace, .pace-inactive, .cge_loader {
@@ -69,8 +80,8 @@ body {
 /*END LOADER*/
 .navbar {
 	background-color: transparent !important;
-	height: 140px;
-    padding-top: 30px;
+	height: 160px;
+    padding-top: 50px;
     /*border-bottom: 2px solid black;*/
     position: fixed;
     top: 0;
@@ -80,7 +91,7 @@ body {
     transition: all 0.5s ease;
 }
 .nav {
-	height: 140px;
+	height: 160px;
 	align-items: baseline;
     transition: all 0.5s ease;
 }
@@ -239,137 +250,6 @@ body {
 	padding: 20px;
 	letter-spacing: 2px;
 }
-.parallax-wrapper {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-}
-/*.parallax.fix {
-  background-attachment: scroll !important;
-  height: 60vh;
-  position: relative;
-  min-height: 300px;
-  background-size: cover !important;
-  background-color: unset !important;
-}*/
-.parallax .overlay {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.3;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  background: -moz-linear-gradient(top, rgba(92, 92, 92, 0.5) 0%, rgba(0, 15, 90, 0.5) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0, 15, 90, 0.5)), color-stop(100%,rgba(92, 92, 92, 0.5))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(92, 92, 92, 0.5) 0%,rgba(0, 15, 90, 0.5) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(92, 92, 92, 0.5) 0%,rgba(0, 15, 90, 0.5) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(92, 92, 92, 0.5) 0%,rgba(0, 15, 90, 0.5) 100%); /* IE10+ */
-  background: linear-gradient(to bottom, rgba(92, 92, 92, 0.5) 0%,rgba(0, 15, 90, 0.5) 100%); /* W3C */
-  background: linear-gradient(to bottom, rgba(92, 92, 92, 0.5) 0%,rgba(0, 15, 90, 0.5) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
-}
-.parallax {
-  position: relative;
-  top: -10%;
-  height: 130vh;
-  width: 100%;
-  padding: 4rem 2rem;
-}
-/*animation: kenburns 110s infinite linear;*/
-
-/* Rotate is needed for IE, otherwise it is jumpy */
-/*@keyframes kenburns {
-  50% {
-    transform: scale(1.3) rotate(0.04deg);
-  }*/
-/*-----------ABOUT SECTION STYLES----------*/
-
-.about {
-	height: auto;
-	background: #fff;
-}
-.about .text-container {
-	max-width: 960px;
-	margin: 0 auto;
-	padding: 40px;
-	text-align: center;
-}
-.about .text-container h1,
-.contact .cartier-list-container h2 {
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 700;
-	letter-spacing: 2px;
-	text-align: center;
-	margin-bottom: 30px;
-}
-.image-container {
-	display: flex;
-	justify-content: center;
-}
-figure {
-	width: 250px;
-	height: 250px;
-	overflow: hidden;
-	border-radius: 3px;
-	margin: 10px;
-	border: 1px solid #acacac;
-}
-.first, .second, .third {
-	height: 100%;
-}
-/*-----------TICKET SECTION STYLES----------*/
-
-.tickets {
-	height: 100vh;
-	position: relative;
-}
-/*-----------CONTACT SECTION STYLES----------*/
-.contact {
-	height: auto;
-	background: #000;
-	padding-bottom: 50px;
-	padding-top: 50px;
-}
-.contact .cartier-list-container {
-	width: 90vw;
-	max-width: 600px;
-	border: 1px solid #fff;
-	padding: 20px;
-	margin: 0 auto;
-}
-.contact .cartier-list-container h2,
-.contact .cartier-list-container p {
-	color: #fff;
-	text-align: center;
-}
-.text-input {
-	display: inline;
-	margin: 5px;
-	border: 1px solid #fff;
-	padding: 10px 15px;
-	background: transparent;
-	width: 31%;
-	border-radius: 6px;
-	caret-color: #fff;
-	color: #fff;
-}
-.sign-up-button {
-	display: block;
-	width: 100px;
-	margin: 0 auto;
-	border: 1px solid #acacac;
-	padding: 10px;
-	color: #fff;
-	background: transparent;
-	margin-top: 15px;
-	border-radius: 6px;
-	font-size: 13px;
-}
 /*--------RIPPLE EFFECTS-------*/
 
 #container, #water {
@@ -406,7 +286,6 @@ figure {
 	filter: url('#turbulence');
 	overflow: hidden;
 }
-
 #canvas {
   /* make the canvas wrapper fits the window */
   position: absolute;
@@ -428,6 +307,286 @@ figure {
   height: 100%;
 }
 
+/*animation: kenburns 110s infinite linear;*/
+
+/* Rotate is needed for IE, otherwise it is jumpy */
+/*@keyframes kenburns {
+  50% {
+    transform: scale(1.3) rotate(0.04deg);
+  }*/
+/*-----------ABOUT SECTION STYLES----------*/
+
+.about {
+	height: auto;
+	background: #fff;
+}
+.text-container {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 40px;
+	text-align: center;
+}
+.text-container h1,
+h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-align: center;
+	margin-bottom: 30px;
+}
+.image-container {
+	display: flex;
+	justify-content: center;
+}
+figure {
+	width: 250px;
+	height: 250px;
+	overflow: hidden;
+	border-radius: 3px;
+	margin: 10px;
+	border: 1px solid #acacac;
+}
+.first, .second, .third {
+	height: 100%;
+}
+/*-----------TICKET SECTION STYLES----------*/
+
+.tickets {
+	height: auto;
+	position: relative;
+	overflow: hidden;
+}
+.tickets .text-container h1 {
+	color: #fff;
+}
+.tickets .package_info {
+	color: #000;
+	width: 90vw;
+  	max-width: 630px;
+	text-align: left;
+	background: rgba(255, 255, 255, 0.9);
+	border-radius: 7px;
+	padding: 40px;
+	margin: 0 auto;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	-webkit-box-shadow: 2px 3px 26px 8px rgba(0,0,0,0.75);
+	-moz-box-shadow: 2px 3px 26px 8px rgba(0,0,0,0.75);
+	box-shadow: 2px 3px 26px 8px rgba(0,0,0,0.75);
+	transform: translateY(80px);
+	opacity: 0;
+	transition: all 0.5s ease;
+}
+.tickets .package_info.show {
+	transform: translateY(0px);
+	opacity: 1;
+}
+.tickets .package_info p {
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+.tickets .package_info li {
+	list-style-type: none;
+	margin-bottom: 5px;
+}
+.tickets .package_info li:before {
+	content: "\2705";
+}
+.tickets .package_info .nested {
+    padding-inline-start: 40px;
+}
+.tickets .package_info .nested .champagne:before {
+	content: "\1F37E";
+}
+.tickets .package_info .nested .beer:before {
+	content: "\1F37B";
+}
+.tickets .package_info .nested .cocktails:before {
+	content: "\1F378";
+}
+.tickets .package_info .nested .bar:before {
+	content: "\1F376";
+}
+.ticket-button-small {
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #000;
+    background: transparent;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    /*font-size: 25px;*/
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+/*PARALLAX*/
+.parallax-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+/*.parallax.fix {
+  background-attachment: scroll !important;
+  height: 60vh;
+  position: relative;
+  min-height: 300px;
+  background-size: cover !important;
+  background-color: unset !important;
+}*/
+.parallax .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* opacity: 0.3; */
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: -moz-linear-gradient(top, rgba(92, 92, 92, 0.5) 0%, rgba(0, 15, 90, 0.5) 100%);
+    /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0, 15, 90, 0.5)), color-stop(100%,rgba(92, 92, 92, 0.5))); */
+    /* background: -webkit-linear-gradient(top, rgba(92, 92, 92, 0.5) 0%,rgba(0, 15, 90, 0.5) 100%); */
+    background: -o-linear-gradient(top, rgba(92, 92, 92, 0.5) 0%,rgba(0, 15, 90, 0.5) 100%);
+    background: -ms-linear-gradient(top, rgba(92, 92, 92, 0.5) 0%,rgba(0, 15, 90, 0.5) 100%);
+    /* background: linear-gradient(to bottom, rgba(92, 92, 92, 0.5) 0%,rgba(0, 15, 90, 0.5) 100%); */
+    /* background: linear-gradient(to bottom, rgba(92, 92, 92, 0.5) 0%,rgba(0, 15, 90, 0.5) 100%); */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000',GradientType=0 );
+    background: rgba(0, 0, 0, 0.5);
+}
+.parallax {
+  position: relative;
+  top: -10%;
+  height: 130vh;
+  width: 100%;
+  padding: 4rem 2rem;
+}
+/*-----------FAQ SECTION STYLES----------*/
+
+.faq {
+	height: auto;
+	background: #fff;
+}
+ul { 
+	list-style-type: none; 
+}
+.accordion {
+  width: 90vw;
+  max-width: 490px;
+  margin: 0 auto;
+  background: #FFF;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.accordion .link {
+  cursor: pointer;
+  display: block;
+  padding: 15px 15px 15px 50px;
+  color: #4D4D4D;
+  font-size: 14px;
+  font-weight: 700;
+  border-bottom: 1px solid #CCC;
+  position: relative;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  text-align: left;
+}
+.accordion li:last-child .link { 
+	border-bottom: 0; 
+}
+.accordion li i {
+  position: absolute;
+  top: 16px;
+  left: 12px;
+  font-size: 18px;
+  color: #595959;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.accordion li i.fa-chevron-down {
+  right: 12px;
+  left: auto;
+  font-size: 16px;
+}
+.accordion li.open .link { 
+	color: #8e8e8e; 
+}
+.accordion li.open i { 
+	color: #8e8e8e; 
+}
+.accordion li.open i.fa-chevron-down {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.submenu {
+  display: none;
+  background: #fff9f6;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  font-size: 14px;
+}
+.submenu li { 
+	color: #000;
+	text-align: left;
+	padding: 20px;
+	/*border-bottom: 1px solid #4b4a5e;*/
+	/*box-shadow: inset 1px 6px 24px 2px rgba(0,0,0,0.75);*/
+}
+img.coming_soon {
+	margin-top: 50px;
+	width: 250px;
+	border-radius: 3px;
+}
+/*-----------CONTACT SECTION STYLES----------*/
+.contact {
+	height: auto;
+	background: #000;
+	padding-bottom: 50px;
+	padding-top: 50px;
+}
+.contact .cartier-list-container {
+	width: 90vw;
+	max-width: 600px;
+	border: 1px solid #fff;
+	padding: 20px;
+	margin: 0 auto;
+}
+.contact .cartier-list-container h2,
+.contact .cartier-list-container p {
+	color: #fff;
+	text-align: center;
+}
+.text-input {
+	display: inline;
+	margin: 5px;
+	border: 1px solid #fff;
+	padding: 10px 15px;
+	background: transparent;
+	width: 31%;
+	/*border-radius: 6px;*/
+	caret-color: #fff;
+	color: #fff;
+}
+.sign-up-button {
+	display: block;
+	width: 100px;
+	margin: 0 auto;
+	border: 1px solid #acacac;
+	padding: 10px;
+	color: #fff;
+	background: transparent;
+	margin-top: 15px;
+	border-radius: 3px;
+	font-size: 13px;
+}
 /*-----------FOOTER STYLES----------*/
 
 footer {
@@ -448,9 +607,13 @@ footer .icon-row img {
 }
 footer p {
 	margin: 0;
+	color: #acacac;
 }
 @media only screen and (max-width: 991px){
-
+	.pace {
+	    height: 120vh;
+	    width: 200vw;
+	}
 }
 @media only screen and (max-width: 767px){
 	.navbar-brand {
@@ -482,7 +645,7 @@ footer p {
 		z-index: -1;
 	}
 	.navbar .nav {
-		top: 75px;
+		top: 90px;
 		height: calc(100vh - 120px) !important;
 		background: rgba(0, 0, 0, 0.95);
 	}
@@ -493,7 +656,30 @@ footer p {
 	.navbar.small .nav {
 		background: rgba(255, 255, 255, 0.95);
 	}
+	.text-input {
+	    width: 100%;
+	}
+	.ticket-button {
+	    padding: 10px;
+	}
+	.cge_loader img {
+    	height: 55vh;
+    }
 }
 @media only screen and (max-width: 479px){
-
+	.text-container {
+	    padding: 10px 10px 40px 10px;
+	}
+	.image-container {
+		display: block;
+	}
+	figure {
+		width: 300px;
+		height: 300px;
+		margin: 0 auto;
+		margin-bottom: 10px;
+	}
+	.text-container h1, h2 {
+		margin-top: 20px;
+	}
 }
