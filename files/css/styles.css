@@ -103,6 +103,7 @@ a:hover {
 .nav-item {
 	height: 45px;
 	margin: 10px;
+	transition: all 0.6s ease;
 }
 .navbar .logo {
 	height: 60px;
@@ -250,6 +251,7 @@ a:hover {
   	min-height: 100%;
     z-index: -1;
     opacity: 1;
+    transition: all 0.5s ease;
 }
 .overlay {
 	position: absolute;
@@ -364,6 +366,7 @@ h2 {
 .image-container {
 	display: flex;
 	justify-content: center;
+	margin-top: 30px;
 }
 figure {
 	width: 200px;
@@ -404,6 +407,7 @@ figure.add_anim {
 }
 figure:hover {
 	transform: translateZ(0) scale3d(1.05, 1.05, 1);
+	box-shadow: unset;
 }
 @keyframes fadeIn {
 	0% {
@@ -534,19 +538,29 @@ figure:hover {
 
 .faq {
 	height: auto;
-	background: #fff;
+	background: #e7e7e7;
 }
 ul { 
 	list-style-type: none; 
 }
+/*.faq .pull_left,
+.faq .pull_right {
+	width: 45%;
+}
+.faq .pull_left {
+	float: left;
+}
+.faq .pull_right {
+	float: right;
+}*/
 .accordion {
   width: 90vw;
   max-width: 490px;
   margin: 0 auto;
-  background: #FFF;
-  -webkit-border-radius: 4px;
+  background: #f4f4f4;
+  /*-webkit-border-radius: 4px;
   -moz-border-radius: 4px;
-  border-radius: 4px;
+  border-radius: 4px;*/
 }
 .accordion .link {
   cursor: pointer;
@@ -596,9 +610,9 @@ ul {
 }
 .submenu {
   display: none;
-  background: #3b3b3b;
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
+  background: #1b1b1b;
+/*  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;*/
   font-size: 14px;
 }
 .submenu li { 
@@ -612,7 +626,8 @@ ul {
 }
 img.coming_soon {
 	margin-top: 50px;
-	width: 250px;
+	width: 350px;
+	border: 10px solid #fff;
 }
 /*-----------CONTACT SECTION STYLES----------*/
 .contact {
@@ -720,6 +735,10 @@ footer .icon-row img {
 	width: 25px;
 	height: 25px;
 	margin: 5px;
+	transition: all 0.5s ease;
+}
+footer .icon-row img:hover {
+	transform: scale(1.1);
 }
 footer p {
 	margin: 0;
@@ -781,6 +800,7 @@ footer p {
 	}
 	.ticket-button {
 	    padding: 10px;
+	    font-size: 14px;
 	}
 	.cge_loader img {
     	height: 55vh;
@@ -797,6 +817,42 @@ footer p {
     }
     .navbar .nav-item .nav-link {
     	color: #000;
+    }
+    figure {
+    	width: 160px;
+    	height: 160px;
+    }
+    .parallax {
+        height: 200vh;
+        top: 25vh;
+    }
+    .nav-item {
+        height: 40px;
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    .collapsing {
+        transition: height .6s ease;
+    }
+    .nav-item:nth-of-type(1){
+    	transition-delay: 0ms;
+    }
+    .nav-item:nth-of-type(2){
+    	transition-delay: 200ms;
+    }
+    /*Skip 5 as 5 is the hidden logo*/
+    .nav-item:nth-of-type(4){
+    	transition-delay: 400ms;
+    }
+    .nav-item:nth-of-type(5){
+    	transition-delay: 600ms;
+    }
+    .navbar-collapse.show .nav-item {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .navbar .nav-item .nav-link {
+    	padding: 0;
     }
 }
 @media only screen and (max-width: 479px){
@@ -820,5 +876,8 @@ footer p {
 	}
 	.cartier-list-container .half {
 		width: 100%;
+	}
+	.background_video {
+		left: -50%;
 	}
 }
