@@ -67,6 +67,18 @@ a:hover {
 	z-index: -1;
 	transition: all 1s ease;
 }
+/*.pace .pace-progress:after {
+	display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: attr(data-progress-text);
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: left;
+    color: #fff;
+}*/
 .preloader-white.anim_slidedown {
 	/*top: -120vh;*/
 	transform: translateY(100vh);
@@ -873,6 +885,10 @@ footer p {
     .ticket-button-small {
         margin-top: 20px;
     }
+	.ticket-button {
+		bottom: 20vh;
+		width: 90vw;
+	}
 }
 @media only screen and (max-width: 479px){
 	.image-container {
