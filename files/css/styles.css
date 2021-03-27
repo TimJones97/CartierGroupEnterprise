@@ -707,6 +707,11 @@ img.coming_soon {
 	background: transparent;
 	margin-top: 25px;
 	font-size: 13px;
+	transition: all 0.5s ease;
+}
+.sign-up-button:hover {
+	color: #000;
+	background: rgba(255, 255, 255, 0.5);
 }
 .sign-up-button:after {
     clear: both;
