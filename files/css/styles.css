@@ -276,6 +276,11 @@ a:hover {
 	padding: 20px;
 	letter-spacing: 2px;
 	z-index: 2;
+	transition: all 0.5s ease;
+}
+.ticket-button:hover {
+	color: #000;
+	background: rgba(255, 255, 255, 0.5);
 }
 /*--------RIPPLE EFFECTS-------*/
 
@@ -757,6 +762,10 @@ footer p {
 	    height: calc(100% * 2.5);
 	    width: 250vh;
 	}
+	figure {
+		width: 160px;
+		height: 160px;
+	}
 }
 @media only screen and (max-width: 767px){
 	#canvas canvas {
@@ -825,10 +834,6 @@ footer p {
     }
     .navbar .nav-item .nav-link {
     	color: #000;
-    }
-    figure {
-    	width: 160px;
-    	height: 160px;
     }
     .parallax {
         height: 200vh;
