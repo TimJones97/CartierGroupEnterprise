@@ -84,9 +84,9 @@ Pace.on("done", function(){
 	   //  $('.preloader-white').fadeOut(1000);
 	   //  $('.pace').fadeOut(1000);
 	    // $('.anim_container').addClass('scale_back');
-	    $('.cge_loader').addClass('anim_zoom');
-	    $('.preloader-white').addClass('anim_zoom');
-	    $('.pace').addClass('anim_zoom');
+	    $('.cge_loader').addClass('anim_slidedown');
+	    $('.preloader-white').addClass('anim_slidedown');
+	    $('.pace').addClass('anim_slidedown');
   	}, 1000);
   }
 });
@@ -155,18 +155,21 @@ function bindVelocity(){
 }
 $(document).ready(function(){
 	// Scroll to top so that WebGL ripple effect loads properly
-	// $(document).scrollTop(0);
+	
+	// Scroll 1 pixel to properly calibrate the parallax elements
+	$(document).scrollTop($(document).scrollTop() + 1);
 	smallNavOnScroll();
 	setCopyrightYear();
 	hideNavOnTap();
 	createCanvas();
 	checkIfTicketsVisible();
 	bindVelocity();
-	// setTimeout(function(){
-	  $('.parallax-wrapper').paroller({
-	    factor: '0.2',
-	    type: 'foreground',
-	    direction: 'vertical'
-	  }); 
-	// }, 2000);
+	$('.parallax-wrapper').paroller({
+	  factor: '0.2',
+	  type: 'foreground',
+	  direction: 'vertical'
+	}); 
+	setTimeout(function(){
+	  $('figure').addClass('no_anim');
+	}, 2000);
 });
