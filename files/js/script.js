@@ -116,14 +116,25 @@ $(function() {
 
 	var accordion = new Accordion($('#accordion'), false);
 });
-function checkIfTicketsVisible(){
-	var isVisible = false;
+function checkIfElementsVisible(){
+	var firstTime = true,
+		ticketInfoVisible = false,
+		photosVisible = false;
 	$(window).scroll(function(){
-		isTicketElementVisible = $('.package_info').visible(true);
-		if(isTicketElementVisible){
+		ticketInfoVisible = $('.package_info').visible(true);
+		photosVisible = $('.image-container').visible(true);
+		if(ticketInfoVisible){
 			setTimeout(function(){
 				$('.package_info').addClass('show');
 			}, 500);
+		}
+		if(photosVisible && firstTime){
+			firstTime = false;
+			$('figure').addClass('add_anim');
+			setTimeout(function(){
+			  $('figure').removeClass('add_anim');
+			  $('figure').addClass('no_anim');
+			}, 2000);
 		}
 	});
 }
@@ -135,41 +146,30 @@ function bindVelocity(){
       e.stopPropagation();
       // set target to anchor's "href" attribute
       var target = $(this).attr('href');
-      if($(window).width() < 767){
-        $('.navbar-collapse.in').collapse('hide');
-      }
+      // if($(window).width() < 767){
+      //   $('.navbar-collapse.in').collapse('hide');
+      // }
       // scroll to each target
-      if($(window).width() < 767){
-        $(target).velocity("scroll", { 
-          duration: 1000,
-          offset: -125
-        });
-      }
-      else {
-        $(target).velocity("scroll", { 
-          duration: 1000,
-          offset: -125
-        });
-      }
+    $(target).velocity("scroll", { 
+      duration: 1000,
+      offset: -125
+    });
   });
 }
 $(document).ready(function(){
 	// Scroll to top so that WebGL ripple effect loads properly
-	
+
 	// Scroll 1 pixel to properly calibrate the parallax elements
 	$(document).scrollTop($(document).scrollTop() + 1);
 	smallNavOnScroll();
 	setCopyrightYear();
 	hideNavOnTap();
 	createCanvas();
-	checkIfTicketsVisible();
+	checkIfElementsVisible();
 	bindVelocity();
 	$('.parallax-wrapper').paroller({
 	  factor: '0.2',
 	  type: 'foreground',
 	  direction: 'vertical'
 	}); 
-	setTimeout(function(){
-	  $('figure').addClass('no_anim');
-	}, 2000);
 });
