@@ -41,26 +41,26 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link active" href="#home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Cartier</a>
+            <a class="nav-link" href="#tickets">Tickets</a>
           </li>
           <li class="nav-item logo">
             <img class="white" src="./files/img/cge_logo.png">
             <img class="black" src="./files/img/cge_logo_black.png">
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Tickets</a>
+            <a class="nav-link" href="#faq">FAQ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">FAQ</a>
+            <a class="nav-link" href="#contact">Contact</a>
           </li>
         </ul>
       </div>
     </nav>
     <div class="anim_container">
-    <section class="main-banner">
+    <section class="main-banner" id="home">
       <div id="canvas"></div>
       <div class="plane">
         <img src="https://timj.design/CartierGroupEnterprise/files/img/cge_banner_wide.jpg" crossorigin="anonymous" />
@@ -71,7 +71,7 @@
         <button class="ticket-button">EXCLUSIVE LAUNCH - 31ST APRIL 2021</button>
       </a>
     </section>
-    <section class="about">
+    <section class="about" id="about">
       <div class="text-container">
         <h1>THE LUXURY EXPERIENCE</h1>
         <div class="image-container">
@@ -84,9 +84,12 @@
           <figure>
             <img class="third" src="./files/img/front_three.jpeg">
           </figure>
+          <figure>
+            <img class="four" src="./files/img/front_four.jpg">
+          </figure>
         </div>
     </section>
-    <section class="tickets">
+    <section class="tickets" id="tickets">
       <div class="parallax-wrapper">
         <div class="parallax" style="background: url('https://timj.design/CartierGroupEnterprise/files/img/yacht.jpg') no-repeat center; background-size: cover;">
           <div class="overlay">
@@ -133,7 +136,7 @@
         </div>
       </div>
     </section>
-    <section class="faq">
+    <section class="faq" id="faq">
         <div class="text-container">
           <h1>FAQ</h1>
           <ul id="accordion" class="accordion">
@@ -177,7 +180,7 @@
           <img class="coming_soon" src="./files/img/coming_soon_poster.jpg">
         </div>
     </section>
-    <section class="contact">
+    <section class="contact" id="contact">
       <div class="parallax-wrapper">
         <div class="parallax" style="background: url('https://timj.design/CartierGroupEnterprise/files/img/contact.jpg') no-repeat center; background-size: cover;">
           <div class="overlay">
@@ -196,10 +199,12 @@
         <div class="full">
           <textarea class="text-input" placeholder="What would you like to know?"></textarea>
         </div>
-        <button class="sign-up-button">SEND</button>
+        <div class="button_container">
+          <button class="sign-up-button">SEND</button>
+        </div>
       </div>
     </section>
-    <section class="sign_up">
+    <section class="sign_up" id="sign_up">
       <div class="cartier-list-container">
         <h2>THE CARTIER LIST</h2>
         <p>Join the VIP list and subscribe for exclusive news, offers, promotions, and future gold ticket drops</p>
@@ -212,7 +217,9 @@
         <div class="full">
           <input class="text-input" placeholder="Email Address">
         </div>
-        <button class="sign-up-button">SIGN UP</button>
+        <div class="button_container">
+          <button class="sign-up-button">SIGN UP</button>
+        </div>
       </div>
     </section>
     <footer>

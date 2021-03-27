@@ -123,7 +123,7 @@ function checkIfTicketsVisible(){
 		if(isTicketElementVisible){
 			setTimeout(function(){
 				$('.package_info').addClass('show');
-			}, 1500);
+			}, 500);
 		}
 	});
 }
@@ -142,13 +142,13 @@ function bindVelocity(){
       if($(window).width() < 767){
         $(target).velocity("scroll", { 
           duration: 1000,
-          offset: -52.5
+          offset: -125
         });
       }
       else {
         $(target).velocity("scroll", { 
           duration: 1000,
-          offset: -52.5
+          offset: -125
         });
       }
   });
