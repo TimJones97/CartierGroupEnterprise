@@ -759,7 +759,7 @@ footer p {
 }
 @media only screen and (max-width: 991px){
 	.pace {
-	    height: calc(100% * 2.5);
+	    height: calc(100vh * 2.5);
 	    width: 250vh;
 	}
 	figure {
