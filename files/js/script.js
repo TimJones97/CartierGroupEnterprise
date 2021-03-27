@@ -16,14 +16,14 @@ var webGLCurtain;
 //   }), 0
 // );
 function smallNavOnScroll(){
-	// Check on the navbar on start
-	// var scrollTop = $(document).scrollTop();
-	// if(scrollTop > 5){
-	// 	$('.navbar').addClass('small');
-	// }
-	// else {
-	// 	$('.navbar').removeClass('small');
-	// }
+	//Check on the navbar on start
+	var scrollTop = $(document).scrollTop();
+	if(scrollTop > 5){
+		$('.navbar').addClass('small');
+	}
+	else {
+		$('.navbar').removeClass('small');
+	}
 	$(window).scroll(function(){
 		var scrollTop = $(document).scrollTop();
 		if(scrollTop > 5){
@@ -127,6 +127,32 @@ function checkIfTicketsVisible(){
 		}
 	});
 }
+function bindVelocity(){
+  // bind click event to all internal page anchors
+  $('a[href*="#"]').on('click', function (e) {
+      // prevent default action and bubbling
+      e.preventDefault();
+      e.stopPropagation();
+      // set target to anchor's "href" attribute
+      var target = $(this).attr('href');
+      if($(window).width() < 767){
+        $('.navbar-collapse.in').collapse('hide');
+      }
+      // scroll to each target
+      if($(window).width() < 767){
+        $(target).velocity("scroll", { 
+          duration: 1000,
+          offset: -52.5
+        });
+      }
+      else {
+        $(target).velocity("scroll", { 
+          duration: 1000,
+          offset: -52.5
+        });
+      }
+  });
+}
 $(document).ready(function(){
 	// Scroll to top so that WebGL ripple effect loads properly
 	// $(document).scrollTop(0);
@@ -135,6 +161,7 @@ $(document).ready(function(){
 	hideNavOnTap();
 	createCanvas();
 	checkIfTicketsVisible();
+	bindVelocity();
 	// setTimeout(function(){
 	  $('.parallax-wrapper').paroller({
 	    factor: '0.2',

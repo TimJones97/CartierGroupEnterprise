@@ -75,7 +75,7 @@ ul {
 /*Enable for debugging*/
 .preloader-white, .pace, .pace-inactive, .cge_loader {
 	transition: all 1s ease;
-	/*display: none !important;*/
+	display: none !important;
 }
 /*END LOADER*/
 .navbar {
@@ -288,7 +288,7 @@ ul {
 }
 #canvas {
   /* make the canvas wrapper fits the window */
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -306,7 +306,6 @@ ul {
   display: none;
   height: 100%;
 }
-
 /*animation: kenburns 110s infinite linear;*/
 
 /* Rotate is needed for IE, otherwise it is jumpy */
@@ -342,12 +341,17 @@ figure {
 	width: 250px;
 	height: 250px;
 	overflow: hidden;
-	border-radius: 3px;
 	margin: 10px;
-	border: 1px solid #acacac;
+	-webkit-box-shadow: 2px 3px 26px 8px rgba(0,0,0,0.35);
+	-moz-box-shadow: 2px 3px 26px 8px rgba(0,0,0,0.35);
+	box-shadow: 2px 3px 26px 8px rgba(0,0,0,0.35);
+	transition: all 0.6s ease;
 }
 .first, .second, .third {
 	height: 100%;
+}
+figure:hover {
+	transform: scale3d(1.05, 1.05, 1);
 }
 /*-----------TICKET SECTION STYLES----------*/
 
@@ -355,17 +359,17 @@ figure {
 	height: auto;
 	position: relative;
 	overflow: hidden;
+	padding-bottom: 30px;
 }
 .tickets .text-container h1 {
 	color: #fff;
 }
 .tickets .package_info {
-	color: #000;
+	color: #fff;
 	width: 90vw;
-  	max-width: 630px;
+  	max-width: 720px;
 	text-align: left;
-	background: rgba(255, 255, 255, 0.9);
-	border-radius: 7px;
+	background: rgba(0, 0, 0, 0.4);
 	padding: 40px;
 	margin: 0 auto;
 	font-family: 'Open Sans', sans-serif;
@@ -388,10 +392,12 @@ figure {
 }
 .tickets .package_info li {
 	list-style-type: none;
+	font-size: 18px;
 	margin-bottom: 5px;
 }
 .tickets .package_info li:before {
 	content: "\2705";
+	padding-right: 10px;
 }
 .tickets .package_info .nested {
     padding-inline-start: 40px;
@@ -411,9 +417,9 @@ figure {
 .ticket-button-small {
     display: block;
     margin: 0 auto;
-    border: 1px solid #000;
+    border: 1px solid #fff;
     background: transparent;
-    color: #000;
+    color: #fff;
     padding: 5px 10px;
     border-radius: 6px;
     font-family: 'Open Sans', sans-serif;
@@ -547,8 +553,8 @@ img.coming_soon {
 }
 /*-----------CONTACT SECTION STYLES----------*/
 .contact {
+	position: relative;
 	height: auto;
-	background: #000;
 	padding-bottom: 50px;
 	padding-top: 50px;
 }
@@ -559,8 +565,42 @@ img.coming_soon {
 	padding: 20px;
 	margin: 0 auto;
 }
-.contact .cartier-list-container h2,
-.contact .cartier-list-container p {
+.cartier-list-container h2,
+.cartier-list-container p {
+	color: #fff;
+	text-align: center;
+}
+.cartier-list-container .half,
+.cartier-list-container .full {
+	width: 50%;
+	float: left;
+	padding: 0px 5px;
+}
+.cartier-list-container .full {
+	width: 100%;
+}
+.contact .cartier-list-container .text-input {
+	color: #fff;
+}
+/*::placeholder {
+	color: #acacac;
+}*/
+/*-----------SIGN UP SECTION STYLES----------*/
+.sign_up {
+	height: auto;
+	background: #000;
+	padding-bottom: 50px;
+	padding-top: 50px;
+}
+.sign_up .cartier-list-container {
+	width: 90vw;
+	max-width: 600px;
+	border: 1px solid #fff;
+	padding: 20px;
+	margin: 0 auto;
+}
+.sign_up .cartier-list-container h2,
+.sign_up .cartier-list-container p {
 	color: #fff;
 	text-align: center;
 }
@@ -570,7 +610,7 @@ img.coming_soon {
 	border: 1px solid #fff;
 	padding: 10px 15px;
 	background: transparent;
-	width: 31%;
+	width: 100%;
 	/*border-radius: 6px;*/
 	caret-color: #fff;
 	color: #fff;
@@ -611,8 +651,8 @@ footer p {
 }
 @media only screen and (max-width: 991px){
 	.pace {
-	    height: 120vh;
-	    width: 200vw;
+	    height: calc(100% * 2.5);
+	    width: 250vh;
 	}
 }
 @media only screen and (max-width: 767px){
@@ -665,11 +705,11 @@ footer p {
 	.cge_loader img {
     	height: 55vh;
     }
+    .text-container {
+        padding: 10px 10px 40px 10px;
+    }
 }
 @media only screen and (max-width: 479px){
-	.text-container {
-	    padding: 10px 10px 40px 10px;
-	}
 	.image-container {
 		display: block;
 	}
