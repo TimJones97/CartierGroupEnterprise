@@ -713,7 +713,7 @@ img.coming_soon {
 	padding: 10px 15px;
 	background: transparent;
 	width: 100%;
-	/*border-radius: 6px;*/
+	border-radius: unset;
 	caret-color: #fff;
 	color: #fff;
 }
