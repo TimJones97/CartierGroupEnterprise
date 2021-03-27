@@ -239,7 +239,7 @@ a:hover {
     height: 100vh;
     width: 100%;
     z-index: 0;
-    opacity: 0.2;
+    opacity: 0.4;
 }
 .overlay {
 	position: absolute;
@@ -748,7 +748,8 @@ footer p {
 		position: relative;
 		left: 0;
 		margin: 0;
-		padding-top: 150px;
+		padding-top: 50px;
+		padding-bottom: 20vh;
 		z-index: -1;
 	}
 	.navbar .nav {
