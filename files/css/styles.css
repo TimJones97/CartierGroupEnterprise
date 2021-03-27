@@ -613,7 +613,6 @@ ul {
 img.coming_soon {
 	margin-top: 50px;
 	width: 250px;
-	border-radius: 3px;
 }
 /*-----------CONTACT SECTION STYLES----------*/
 .contact {
@@ -692,7 +691,6 @@ img.coming_soon {
 	color: #fff;
 	background: transparent;
 	margin-top: 25px;
-	border-radius: 3px;
 	font-size: 13px;
 }
 .sign-up-button:after {
@@ -819,5 +817,8 @@ footer p {
 	}
 	footer p {
 	    font-size: 13px;
+	}
+	.cartier-list-container .half {
+		width: 100%;
 	}
 }
