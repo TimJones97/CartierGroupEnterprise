@@ -375,7 +375,7 @@ a:hover {
 .about .text-container p {
 	padding: 15px;
 }
-.text-container h1,
+h1,
 h2 {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 700;
@@ -534,12 +534,12 @@ figure:hover {
 	background: linear-gradient(rgb(71 72 156 / 70%), rgba(0,0,0, 0.7)), url(../img/ticket_events.jpg);
 	background-position: 50%;
 	background-repeat: no-repeat;
-	background-size: 70vw 130vh;
+	background-size: auto 150%;
 }
 .right_private .private_overlay {
 	background: linear-gradient(rgb(29 23 4 / 70%), rgb(93 75 19 / 70%)), url(../img/private_events.jpg);
 	background-position: 20%;
-	background-size: 70vw 130vh;
+	background-size: auto 150%;
 	background-repeat: no-repeat;
 }
 .left_tickets .tickets_overlay h1,
@@ -567,6 +567,9 @@ figure:hover {
 	width: 100%;
 	margin-top: 30px;
 	text-align: center;
+}
+.go_back:hover {
+	color: #9b9b9b;
 }
 /*.right_private .private_overlay h1 { 
 	right: 20px;
@@ -792,6 +795,9 @@ img.coming_soon {
 	height: auto;
 	padding-bottom: 50px;
 	padding-top: 50px;
+}
+.contact h1 {
+	color: #fff;
 }
 .cartier-list-container {
 	width: 90vw;
