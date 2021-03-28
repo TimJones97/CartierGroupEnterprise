@@ -561,6 +561,7 @@ figure:hover {
 	text-align: center;
 }
 .go_back {
+	position: relative;
 	display: block;
 	text-decoration: underline;
 	color: #fff;
@@ -568,9 +569,29 @@ figure:hover {
 	margin-top: 30px;
 	text-align: center;
 }
+.go_back p:before {
+	content: "";
+	margin-right: 5px;
+	height: 10px;
+	width: 10px;
+	padding-right: 20px;
+	background: url(../img/left-arrow.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	transition: all 0.5s ease, opacity 0.2s ease;
+	opacity: 1;
+}
 .go_back:hover {
 	color: #9b9b9b;
 }
+.go_back:hover p:before{
+	margin-right: 10px;
+}
+/*.go_back:hover {
+    opacity: 1;
+    margin-left: -10px;
+	color: #9b9b9b;
+}*/
 /*.right_private .private_overlay h1 { 
 	right: 20px;
 }*/
@@ -581,7 +602,7 @@ figure:hover {
 	color: #fff;
 	width: 90vw;
   	max-width: 820px;
-  	min-height: 475px;
+  	min-height: 480px;
 	text-align: left;
 	background: rgba(0, 0, 0, 0.7);
 	padding: 40px 60px;
@@ -599,10 +620,10 @@ figure:hover {
 	transform: translateY(0px);
 	opacity: 1;
 }
-.tickets .package_info p {
+.tickets .package_info h2 {
 	text-align: center;
 	margin-bottom: 20px;
-	font-size: 20px;
+	/*font-size: 22px;*/
 }
 .tickets .package_info li {
 	list-style-type: none;
@@ -653,6 +674,9 @@ figure:hover {
     /*font-size: 25px;*/
     margin-top: 40px;
     margin-bottom: 10px;
+}
+.right_private .ticket-button-small {
+    margin-top: 80px;
 }
 /*PARALLAX*/
 .parallax-wrapper {
@@ -911,6 +935,13 @@ footer .icon-row img:hover {
 footer p {
 	margin: 0;
 	color: #acacac;
+}
+/*For ultrawide screen*/
+@media only screen and (min-width: 2000px){
+	.left_tickets .tickets_overlay,
+	.right_private .private_overlay {
+		background-size: auto 200%;
+	}
 }
 @media only screen and (max-width: 991px){
 	.pace {
