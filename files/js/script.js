@@ -141,20 +141,70 @@ function checkIfElementsVisible(){
 function bindVelocity(){
   // bind click event to all internal page anchors
   $('a[href*="#"]').on('click', function (e) {
-      // prevent default action and bubbling
-      e.preventDefault();
-      e.stopPropagation();
-      // set target to anchor's "href" attribute
-      var target = $(this).attr('href');
-      // if($(window).width() < 767){
-      //   $('.navbar-collapse.in').collapse('hide');
-      // }
-      // scroll to each target
-    $(target).velocity("scroll", { 
-      duration: 1000,
-      offset: -125
-    });
+	var target = $(this).attr('href');
+	// If the target is not empty
+    if(target != '#'){
+		e.preventDefault();
+		e.stopPropagation();
+		// set target to anchor's "href" attribute
+		  
+		// scroll to each target
+	    $(target).velocity("scroll", { 
+	      duration: 1000,
+	      offset: -125
+	    });
+    }
   });
+}
+function hoverEffects(){
+	var privateClicked = false,
+		ticketsClicked = false;
+
+	$('.left_tickets').hover(
+		function() {
+		    $(this).addClass('expand');
+		    $('.right_private').addClass('compress');
+	  	}, function() {
+		    $(this).removeClass('expand');
+		    $('.right_private').removeClass('compress');
+  	});
+	$('.left_tickets').click(function(){
+		if(!ticketsClicked){
+			$(this).addClass('full_width');
+			$('.right_private').addClass('zero_width');
+			$('.left_tickets .tickets_overlay').addClass('disappear');
+			ticketsClicked = true;
+		}
+	});
+	$('.right_private').click(function(){
+		if(!privateClicked){
+			$(this).addClass('full_width');
+			$('.left_tickets').addClass('zero_width');
+			$('.right_private .private_overlay').addClass('disappear');
+			privateClicked = true;
+		}
+	});
+	$('.go_back').click(function(e){
+		e.preventDefault();
+		if(privateClicked || ticketsClicked){
+			$('.left_tickets').removeClass('full_width').removeClass('zero_width');
+			$('.right_private').removeClass('full_width').removeClass('zero_width');
+			$('.right_private .private_overlay').removeClass('disappear');
+			$('.left_tickets .tickets_overlay').removeClass('disappear');
+			setTimeout(function(){
+				privateClicked = false,
+				ticketsClicked = false;
+			}, 500);
+		}
+	});
+	$('.right_private').hover(
+		function() {
+		    $(this).addClass('expand');
+		    $('.left_tickets').addClass('compress');
+	  	}, function() {
+		    $(this).removeClass('expand');
+		    $('.left_tickets').removeClass('compress');
+	});
 }
 $(document).ready(function(){
 	// Scroll to top so that WebGL ripple effect loads properly
@@ -167,6 +217,7 @@ $(document).ready(function(){
 	createCanvas();
 	checkIfElementsVisible();
 	bindVelocity();
+	hoverEffects();
 	$('.parallax-wrapper').paroller({
 	  factor: '0.2',
 	  type: 'foreground',
