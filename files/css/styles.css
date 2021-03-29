@@ -92,7 +92,7 @@ a:hover {
 /*Enable for debugging*/
 .preloader-white, .pace, .pace-inactive, .cge_loader {
 	transition: all 0.7s ease-in-out;
-	display: none !important;
+	/*display: none !important;*/
 }
 /*END LOADER*/
 .navbar {
@@ -444,8 +444,9 @@ figure.add_anim {
 	animation-delay: 1300ms !important;
 }
 figure:hover {
+	box-shadow: 2px 3px 26px 8px rgba(93,75,19,0.8);
 	transform: translateZ(0) scale3d(1.05, 1.05, 1);
-	box-shadow: unset;
+	/*box-shadow: unset;*/
 }
 @keyframes fadeIn {
 	0% {
@@ -458,7 +459,6 @@ figure:hover {
 	}
 }
 /*-----------TICKET SECTION STYLES----------*/
-
 .tickets {
 	height: auto;
 	position: relative;
@@ -496,6 +496,7 @@ figure:hover {
 }
 .full_width {
 	width: 100% !important;
+	cursor: auto !important;
 }
 .zero_width {
 	width: 0px !important;
