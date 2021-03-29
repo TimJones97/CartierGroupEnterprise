@@ -233,6 +233,9 @@ function hoverEffects(){
 		    $('.left_tickets').removeClass('compress');
 	});
 }
+$(window).resize(function(){
+	$(document).scrollTop($(document).scrollTop() + 1);
+});
 $(document).ready(function(){
 	// Scroll to top so that WebGL ripple effect loads properly
 
