@@ -154,8 +154,15 @@ function bindVelocity(){
 		    $( "#message" ).focus();
 		  }, 1200);  
 		}
+		if(target == "#contact-yacht") {
+		  $("#message").val("Hello, I'd like to enquire about the yacht deposit and fees. ");    
+		  target = "#contact";  
+		  setTimeout(function(){
+		    $( "#message" ).focus();
+		  }, 1200);  
+		}
 		if(target == "#contact-private") {
-		  $("#message").val("Hello, I'd like to enquire about a private event. ");    
+		  $("#message").val("Hello, I'd like to enquire about booking a private event. ");    
 		  target = "#contact";  
 		  setTimeout(function(){
 		    $( "#message" ).focus();
@@ -163,6 +170,13 @@ function bindVelocity(){
 		}
 		if(target == "#contact-depart") {
 		  $("#message").val("Hello, I'd like to enquire about docking elsewhere. ");    
+		  target = "#contact";  
+		  setTimeout(function(){
+		    $( "#message" ).focus();
+		  }, 1200);  
+		}
+		if(target == "#contact-video") {
+		  $("#message").val("Hello, I'd like to enquire about the pricing for a videographer. ");    
 		  target = "#contact";  
 		  setTimeout(function(){
 		    $( "#message" ).focus();
@@ -245,10 +259,10 @@ function createCarousel(){
 	    loop: true,
 	    margin: 30,
 	    dots: true,
-	    autoplay: true,
-        autoplayTimeout: 4000,
-        autoplayHoverPause: true,
-        autoplaySpeed: 1500,
+	    // autoplay: true,
+     //    autoplayTimeout: 4000,
+     //    autoplayHoverPause: true,
+     //    autoplaySpeed: 1500,
         animateOut: 'fadeOut',
 	    items: 1
 	})

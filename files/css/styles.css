@@ -490,6 +490,7 @@ figure:hover {
 	border-top-left-radius: 7px;
 	height: 375px;
 	width: 670px;
+	margin: 0 auto;
 }
 .owl-theme .owl-nav.disabled+.owl-dots {
     position: absolute;
@@ -676,7 +677,7 @@ figure:hover {
 	color: #fff;
 	width: 90vw;
   	max-width: 820px;
-  	min-height: 480px;
+  	min-height: 770px;
 	text-align: left;
 	background: rgba(0, 0, 0, 0.7);
 	padding: 40px 60px;
@@ -1039,10 +1040,6 @@ footer p {
 	    height: calc(100vh * 2.5);
 	    width: 250vh;
 	}
-	figure {
-		width: 160px;
-		height: 160px;
-	}
 }
 @media only screen and (max-width: 767px){
 	#canvas canvas {
@@ -1175,16 +1172,20 @@ footer p {
 	.right_private .private_overlay h1 {
 		min-width: 360px;		
 	}
+	.owl-carousel {
+		height: 375px;
+		width: 490px;
+	}
+	.about .text-container .merch-text {
+		width: 490px;
+	}
+	.tickets .package_info {
+	    min-height: 720px;
+	}
 }
 @media only screen and (max-width: 479px){
 	.image-container {
 		display: block;
-	}
-	figure {
-		width: 300px;
-		height: 300px;
-		margin: 0 auto;
-		margin-bottom: 20px;
 	}
 	.text-container h1, h2 {
 		margin-top: 20px;
@@ -1203,5 +1204,12 @@ footer p {
 	}
 	.tickets .package_info {
 		padding: 20px;
+	}
+	.owl-carousel {
+		height: 202px;
+		width: 360px;
+	}
+	.about .text-container .merch-text {
+		width: 360px;
 	}
 }
