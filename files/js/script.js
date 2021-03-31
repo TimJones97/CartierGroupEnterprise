@@ -147,6 +147,13 @@ function bindVelocity(){
 		e.preventDefault();
 		e.stopPropagation();
 		// set target to anchor's "href" attribute
+		if(target == "#contact-vip") {
+		  $("#message").val("Hello, I'd like to enquire about the VIP extras. ");    
+		  target = "#contact";  
+		  setTimeout(function(){
+		    $( "#message" ).focus();
+		  }, 1200);  
+		}
 		if(target == "#contact-private") {
 		  $("#message").val("Hello, I'd like to enquire about a private event. ");    
 		  target = "#contact";  
@@ -233,12 +240,23 @@ function hoverEffects(){
 		    $('.left_tickets').removeClass('compress');
 	});
 }
+function createCarousel(){
+	$('#owl-carousel').owlCarousel({
+	    loop: true,
+	    margin: 30,
+	    dots: true,
+	    autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true,
+        autoplaySpeed: 1500,
+        animateOut: 'fadeOut',
+	    items: 1
+	})
+}
 $(window).resize(function(){
 	$(document).scrollTop($(document).scrollTop() + 1);
 });
 $(document).ready(function(){
-	// Scroll to top so that WebGL ripple effect loads properly
-
 	// Scroll 1 pixel to properly calibrate the parallax elements
 	$(document).scrollTop($(document).scrollTop() + 1);
 	smallNavOnScroll();
@@ -248,6 +266,7 @@ $(document).ready(function(){
 	checkIfElementsVisible();
 	bindVelocity();
 	hoverEffects();
+	createCarousel();
 	$('.parallax-wrapper').paroller({
 	  factor: '0.2',
 	  type: 'foreground',

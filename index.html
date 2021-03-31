@@ -9,9 +9,11 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <!-- Latest OwlCarousel2 CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css" rel="stylesheet">
+    <!-- Latest OwlCarousel2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+
+    <!-- Latest OwlCarousel2 Theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" />
 
     <!-- Pace.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/black/pace-theme-fill-left.min.css" integrity="sha256-VEKCck3zsvPsLnsyH5ytEpHq5RugkueebWCLJ1g0ykI=" crossorigin="anonymous" />
@@ -82,23 +84,41 @@
       <div class="text-container">
         <h1>THE LUXURY EXPERIENCE</h1>
         <p>
-          In 2021 Cartier Group Enterprise brings Gold Coast the most exclusive experience this year.<br>
-          Set sail through the beautiful Gold Coast canals in our Luxurious superyacht.
+          In 2021 Cartier Group Enterprise brings you the superyacht experience - set sail through the beautiful Gold Coast canals in our luxurious superyacht. We also offer the <b>Cartier Bundle:</b> the experience of a lifetime combining the yacht cruise, a luxury supercar of your choosing, and a luxurious oceanview apartment stay.
+        </p>
+        <p class="fine-print">
+          *Additional cost outside of ticket admission.
         </p>
         <div class="image-container">
-          <figure class="first" >
-            <img src="./files/img/front_one.jpg">
-          </figure>
-          <figure class="second">
-            <img src="./files/img/front_two.jpeg">
-          </figure>
-          <figure class="third">
-            <img src="./files/img/front_three.jpeg">
-          </figure>
-          <figure class="fourth">
-            <img src="./files/img/front_fourth.jpg">
-          </figure>
+          <div id="owl-carousel" class="owl-carousel owl-theme">
+            <div class="item">
+              <figure class="first">
+                <img src="./files/img/carousel/front_one.jpg">
+              </figure>
+            </div>
+            <div class="item">
+              <figure class="second">
+                <img src="./files/img/carousel/front_two.jpg">
+              </figure>
+            </div>
+            <div class="item">
+              <figure class="third">
+                <img src="./files/img/carousel/front_three.jpg">
+              </figure>
+            </div>
+            <div class="item">
+              <video class="carousel_video" muted loop="loop" autoplay playsinline>
+                  <source src="./files/img/airbnb_movie.mov" type="video/mp4">
+              </video>
+              <!-- <figure class="fourth">
+                <img src="./files/img/carousel/front_fourth.jpg">
+              </figure> -->
+            </div>
+          </div>
         </div>
+        <p class="merch-text">
+          Exclusive merch coming soon! Sign up <a href="#contact">here</a> for updates.
+        </p>
     </section>
     <section class="tickets" id="tickets">
       <div class="left_tickets">
@@ -115,7 +135,7 @@
           <ul>
             <h2>TICKET INCLUDES:</h2>
             <li>
-              4 hour exclusive cruise through the canals of the Gold Coast
+              3 hour exclusive cruise through the canals of the Gold Coast
             </li>
             <li>
               Located on bottom deck
@@ -142,6 +162,22 @@
             </li>
             <a class="no_underline" href="https://moshtix.com.au/v2/event/cartier-october-cruise/122806" target="_blank">
               <button class="ticket-button-small">Buy Tickets</button>
+            </a>
+            <h2>VIP EXTRAS:</h2>
+            <li>
+              Bottle service
+            </li>
+            <li>
+              Complimentary bottle of Moët and 1L spirit of choice upon boarding
+            </li>
+            <li>
+              Complimentary round of shots
+            </li>
+            <li>
+              Private booth
+            </li>
+            <a class="no_underline" href="#contact-vip" target="_blank">
+              <button class="ticket-button-small">Enquire for availability</button>
             </a>
           </ul>
         </div>
@@ -205,9 +241,15 @@
               </ul>
             </li>
             <li>
-              <div class="link"><i class="fa fa-group"></i>Can I book a Private Function?<i class="fa fa-chevron-down"></i></div>
+              <div class="link"><i class="fa fa-group"></i>Is there an age restriction?<i class="fa fa-chevron-down"></i></div>
               <ul class="submenu">
-                <li>A private function can be booked and curated to your specifications within reason. You can book a private function by contacting one of our friendly staff <a href="#contact">here</a>. Only limited spots available.</li>
+                <li>Everyone of any age is welcome aboard, although you must have a valid open license in order to book the Cartier Bundle, and over the age of 18 if you wish to consume alcohol.</li>
+              </ul>
+            </li>
+            <li>
+              <div class="link"><i class="fa fa-user-circle"></i>Do you cater for special requirements?<i class="fa fa-chevron-down"></i></div>
+              <ul class="submenu">
+                <li>We are able to take any dietary and allergy related requirements into consideration prior to your arrival. Disability ramps are also provided for those with a wheelchair. If you have any of these requirements, please <a href="#contact">message us</a> so that we can prepare the best experience for you.</li>
               </ul>
             </li>
             <li>
@@ -273,7 +315,7 @@
         <a href="https://www.facebook.com/cartiergroupenterprise" target="_blank">
           <img src="./files/img/fb.png">
         </a>
-        <a href=href="https://www.instagram.com/cartiergroupenterprise" target="_blank">
+        <a href="https://www.instagram.com/cartiergroupenterprise" target="_blank">
           <img src="./files/img/instagram.png">
         </a>
       </div>
@@ -367,6 +409,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-visible/1.0.0/jquery.visible.min.js" integrity="sha512-nbcqle0pJdpYHlV7xaxr+YZ+7tilfOsUPoji9S+I2Afk7Ab0yRsnbMKR+ZNdrSdMyYEbp3r5ZMTJ1VMMOrmTWQ==" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/paroller.js/1.4.1/jquery.paroller.min.js" integrity="sha512-jYedLgTWxBXtDBdGhnUgCgbgQ5j450R2LhxXk1G+pBcbaARaEC/qsrIhOtqAAiY7UBylc6bVGH6EFR10RNBXuQ==" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.min.js" integrity="sha256-1HqoI76JGKA17K0C0s9K8L/iy8PAC43KVLt1hRD/Ojc=" crossorigin="anonymous"></script>
 
