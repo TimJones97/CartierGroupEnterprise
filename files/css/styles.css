@@ -370,13 +370,7 @@ section {
   display: none;
   height: 100%;
 }
-/*animation: kenburns 110s infinite linear;*/
 
-/* Rotate is needed for IE, otherwise it is jumpy */
-/*@keyframes kenburns {
-  50% {
-    transform: scale(1.3) rotate(0.04deg);
-  }*/
 /*-----------ABOUT SECTION STYLES----------*/
 
 .about {
@@ -429,26 +423,8 @@ section {
 	margin: 0 auto;
 	color: #fff;
 	background: #1b1b1b;
-	border-bottom-right-radius: 7px;
-	border-bottom-left-radius: 7px;
-}
-figure {
-	width: 100%;
-	height: auto;
-	overflow: hidden;
-/*	-webkit-box-shadow: 2px 3px 26px 8px rgba(0,0,0,0.35);
-	-moz-box-shadow: 2px 3px 26px 8px rgba(0,0,0,0.35);
-	box-shadow: 2px 3px 26px 8px rgba(0,0,0,0.35);*/
-	transition: all 0.6s ease;
-	backface-visibility: hidden;
-	transform: translateZ(0);
-}
-/*figure.no_anim {
-	opacity: 1;
-	animation: none;
-}*/
-figure img {
-	height: 100%;
+/*	border-bottom-right-radius: 7px;
+	border-bottom-left-radius: 7px;*/
 }
 /*.first, .second, .third, .fourth {
 	opacity: 0;
@@ -486,11 +462,19 @@ figure:hover {
 /*----OWL CAROUSEL STYLES----*/
 .owl-carousel {
 	overflow: hidden;
-	border-top-right-radius: 7px;
-	border-top-left-radius: 7px;
+/*	border-top-right-radius: 7px;
+	border-top-left-radius: 7px;*/
 	height: 375px;
 	width: 670px;
 	margin: 0 auto;
+	border-top: 20px solid #1b1b1b;
+	border-right: 20px solid #1b1b1b;
+	border-left: 20px solid #1b1b1b;
+	background: #1b1b1b;
+}
+.owl-carousel .owl-stage-outer {
+	height: 355px;
+	border-radius: 7px;
 }
 .owl-theme .owl-nav.disabled+.owl-dots {
     position: absolute;
@@ -500,9 +484,30 @@ figure:hover {
 }
 .owl-theme .owl-dots .owl-dot span {
     background: #9b9b9b;
+    width: 5px;
+    height: 5px;
+    margin: 5px 5px;
+    border: unset;
 }
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
     background: #fff;
+}
+.owl-carousel .item {
+	animation: kenburns 20s infinite linear alternate;
+}
+/*animation: kenburns 110s infinite linear;*/
+.owl-carousel .item img {
+	width: 100%;
+	height: 100%;
+}
+/* Rotate is needed for IE, otherwise it is jumpy */
+@keyframes kenburns {
+  	0% {
+    	transform: scale(1.0) rotate(0.04deg);
+	}
+	100% {
+    	transform: scale(1.3) rotate(0.04deg);
+	}
 }
 /*-----------TICKET SECTION STYLES----------*/
 .tickets {
@@ -1370,6 +1375,9 @@ footer p {
 	.owl-carousel {
 		height: 202px;
 		width: 360px;
+	}
+	.owl-carousel .owl-stage-outer {
+		height: 182px;
 	}
 	.about .text-container .merch-text {
 		width: 360px;

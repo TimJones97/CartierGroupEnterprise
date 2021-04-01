@@ -262,8 +262,9 @@ function createCarousel(){
 	    autoplay: true,
         autoplayTimeout: 4000,
         autoplayHoverPause: true,
-        autoplaySpeed: 1500,
+        autoplaySpeed: 2000,
         animateOut: 'fadeOut',
+        margin: 100,
 	    items: 1
 	})
 }
