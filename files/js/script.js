@@ -281,7 +281,7 @@ $(document).ready(function(){
 	var pathname = window.location.pathname.split('/');
 	pathname = pathname[pathname.length-2] + '/' + pathname[pathname.length-1]
 	// console.log(pathname);
-	if(pathname == 'CartierGroupEnterprise/index.html'){
+	if(pathname == 'CartierGroupEnterprise/'){
 		checkIfElementsVisible();
 		createCarousel();
 		hoverEffects();
