@@ -274,7 +274,7 @@ $(document).ready(function(){
 	// Scroll 1 pixel to properly calibrate the parallax elements
 	$(document).scrollTop($(document).scrollTop() + 1);
 	var pathname = window.location.pathname;
-	if(pathname == '/index.html'){
+	if(pathname == '/index.html' || pathname == '/'){
 		checkIfElementsVisible();
 		createCarousel();
 		hoverEffects();
