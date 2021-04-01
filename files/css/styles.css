@@ -479,7 +479,7 @@ figure:hover {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0%);
-    bottom: 10px;
+    bottom: 2px;
 }
 .owl-theme .owl-dots .owl-dot span {
     background: #9b9b9b;
@@ -1344,6 +1344,9 @@ footer p {
 	}
 	.modal {
 		max-width: 360px;
+	}
+	.booking .container-center {
+	    margin-top: 200px;
 	}
 }
 @media only screen and (max-width: 479px){
