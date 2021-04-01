@@ -678,6 +678,7 @@ figure:hover {
 	color: #fff;
 }
 .tickets .package_info {
+	position: relative;
 	color: #fff;
 	width: 90vw;
   	max-width: 820px;
@@ -972,7 +973,7 @@ img.coming_soon {
 	color: #000;
 }
 .contact .cartier-list-container .text-input::placeholder {
-	color: #3b3b3b;
+	color: #4b4b4b;
 }
 .sign-up-button {
 	display: block;

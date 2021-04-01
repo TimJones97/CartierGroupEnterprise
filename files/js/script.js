@@ -147,7 +147,7 @@ function bindVelocity(){
 		e.stopPropagation();
 		// set target to anchor's "href" attribute
 		if(target == "#contact-vip") {
-		  $("#message").val("Hello, I'd like to enquire about the VIP extras. ");    
+		  $("#message").val("Hello, I'd like to enquire about the availability of VIP access. ");    
 		  target = "#contact";  
 		  setTimeout(function(){
 		    $( "#message" ).focus();
