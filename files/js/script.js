@@ -259,13 +259,18 @@ function createCarousel(){
 	    loop: true,
 	    margin: 30,
 	    dots: true,
-	    // autoplay: true,
-     //    autoplayTimeout: 4000,
-     //    autoplayHoverPause: true,
-     //    autoplaySpeed: 1500,
+	    autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true,
+        autoplaySpeed: 1500,
         animateOut: 'fadeOut',
 	    items: 1
 	})
+}
+function writeLiveReload(){
+	if(location.host == ''){
+		document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
+	}
 }
 $(window).resize(function(){
 	$(document).scrollTop($(document).scrollTop() + 1);
@@ -273,10 +278,11 @@ $(window).resize(function(){
 $(document).ready(function(){
 	// Scroll 1 pixel to properly calibrate the parallax elements
 	$(document).scrollTop($(document).scrollTop() + 1);
-	var pathname = window.location.pathname;
-	console.log(location.origin);
+	var pathname = window.location.pathname.split('/');
+	pathname = pathname[pathname.length-1]
+	// console.log(location.origin);
 	console.log(pathname);
-	if(pathname == '/CartierGroupEnterprise/index.html' || pathname == '/CartierGroupEnterprise/'){
+	if(pathname == 'index.html' || pathname == ''){
 		checkIfElementsVisible();
 		createCarousel();
 		hoverEffects();

@@ -150,15 +150,14 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.min.js" integrity="sha256-1HqoI76JGKA17K0C0s9K8L/iy8PAC43KVLt1hRD/Ojc=" crossorigin="anonymous"></script>
 
-    <!-- <script rel="stylesheet" type="text/javascript" href="../files/js/script.js"></script> -->
-    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
-    <script src="../files/js/script.js"></script>
-    <script>
+    <script type="text/javascript" src="../files/js/script.js"></script>
+    <script type="text/javascript">
       $('.deposit-btn-trigger').click(function() {
          $('.modal-wrapper').toggleClass('open');
         $('.page-wrapper').toggleClass('blur');
          return false;
       });
+      writeLiveReload();
     </script>
     <!-- <script>document.write('<script type="text/javascript" href="../files/js/script.js?v=' + Date.now() + '"\/></' + 'script>')</script> -->
   </body>
