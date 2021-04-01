@@ -591,6 +591,7 @@ figure:hover {
     opacity: 1;
     margin-left: 10px;
 }
+/*----Overlay for tickets/private----*/
 .left_tickets .tickets_overlay,
 .right_private .private_overlay {
 	position: absolute;
@@ -682,7 +683,7 @@ figure:hover {
 	color: #fff;
 	width: 90vw;
   	max-width: 820px;
-  	min-height: 770px;
+  	height: 400px;
 	text-align: left;
 	background: rgba(0, 0, 0, 0.7);
 	padding: 40px 60px;
@@ -691,6 +692,9 @@ figure:hover {
 	font-weight: 400;
 	box-shadow: 2px 3px 26px 8px rgba(0,0,0,0.75);
 	transition: all 0.5s ease;
+}
+.tickets .full_width .package_info {
+  	height: 770px;
 }
 .tickets .left_tickets .package_info {
 	background: rgba(255, 255, 255, 0.7);
@@ -1335,8 +1339,8 @@ footer p {
 	.about .text-container .merch-text {
 		width: 490px;
 	}
-	.tickets .package_info {
-	    min-height: 720px;
+	.tickets .full_width .package_info {
+	    height: 720px;
 	}
 	.modal {
 		max-width: 360px;
