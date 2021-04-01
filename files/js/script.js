@@ -121,13 +121,12 @@ function checkIfElementsVisible(){
 		ticketInfoVisible = false,
 		photosVisible = false;
 	$(window).scroll(function(){
-		ticketInfoVisible = $('.package_info').visible(true);
 		photosVisible = $('.image-container').visible(true);
-		if(ticketInfoVisible){
-			setTimeout(function(){
-				$('.package_info').addClass('show');
-			}, 500);
-		}
+		// if(ticketInfoVisible){
+		// 	setTimeout(function(){
+		// 		$('.package_info').addClass('show');
+		// 	}, 500);
+		// }
 		if(photosVisible && firstTime){
 			firstTime = false;
 			$('figure').addClass('add_anim');
@@ -280,10 +279,9 @@ $(document).ready(function(){
 	// Scroll 1 pixel to properly calibrate the parallax elements
 	$(document).scrollTop($(document).scrollTop() + 1);
 	var pathname = window.location.pathname.split('/');
-	pathname = pathname[pathname.length-1]
-	// console.log(location.origin);
-	console.log(pathname);
-	if(pathname == 'index.html' || pathname == ''){
+	pathname = pathname[pathname.length-2] + '/' + pathname[pathname.length-1]
+	// console.log(pathname);
+	if(pathname == 'CartierGroupEnterprise/index.html'){
 		checkIfElementsVisible();
 		createCarousel();
 		hoverEffects();
