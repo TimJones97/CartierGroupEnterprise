@@ -280,8 +280,8 @@ $(document).ready(function(){
 	$(document).scrollTop($(document).scrollTop() + 1);
 	var pathname = window.location.pathname.split('/');
 	pathname = pathname[pathname.length-2] + '/' + pathname[pathname.length-1]
-	// console.log(pathname);
-	if(pathname == 'CartierGroupEnterprise/'){
+	console.log(pathname);
+	if(pathname == 'CartierGroupEnterprise/' || pathname == 'CartierGroupEnterprise/index.html'){
 		checkIfElementsVisible();
 		createCarousel();
 		hoverEffects();
