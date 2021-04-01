@@ -273,14 +273,17 @@ $(window).resize(function(){
 $(document).ready(function(){
 	// Scroll 1 pixel to properly calibrate the parallax elements
 	$(document).scrollTop($(document).scrollTop() + 1);
+	var pathname = window.location.pathname;
+	if(pathname == '/index.html'){
+		checkIfElementsVisible();
+		createCarousel();
+		hoverEffects();
+		createCanvas();
+	}
 	smallNavOnScroll();
 	setCopyrightYear();
 	hideNavOnTap();
-	createCanvas();
-	checkIfElementsVisible();
 	bindVelocity();
-	hoverEffects();
-	createCarousel();
 	$('.parallax-wrapper').paroller({
 	  factor: '0.2',
 	  type: 'foreground',

@@ -112,7 +112,7 @@ a:hover {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 2;
+    z-index: 999;
     transition: all 0.5s ease;
 }
 .nav {
@@ -256,11 +256,11 @@ a:hover {
 	position: relative;
 	height: 100vh;
 }
-.main-banner, .about, .tickets, .faq, .contact {
+section {
 	overflow: hidden;
 }
 .pattern_overlay {
-	position: fixed;
+	position: absolute;
 	width: 100%;
 	height: 100%;
 	background: rgba(17,51,90,.2);
@@ -999,6 +999,165 @@ img.coming_soon {
     content: '';
     display: block;
 }
+/*-----------BOOKING PAGE STYLES----------*/
+.booking {
+	position: relative;
+	height: auto;
+	min-height: 100vh;
+	width: 100%;
+	background: url('../img/yacht.jpg');
+	background-size: cover;
+}
+.booking .pattern_overlay {
+	z-index: 0;
+	background: rgba(3 5 8 / 40%);
+	background-image: url(../img/pattern2.png);
+}
+.booking .container-center {
+	position: relative;
+	padding: 20px;
+	width: 90vw;
+	max-width: 500px;
+	box-shadow: 2px 3px 26px 8px rgba(0,0,0,0.75);
+	background: rgba(255, 255, 255, 0.7);
+	margin: 0 auto;
+	margin-top: 300px;
+	margin-bottom: 50px;
+}
+#paypal-button-container {
+  margin-bottom: 0px;
+}
+.deposit-details p {
+  text-align: center !important;
+  float: none !important;
+  margin-bottom: 40px !important;
+  color: #000;
+}
+.deposit-btn-trigger {
+  width: 150px;
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  margin: 0 auto;
+  padding: 1em 0;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background: #1b1b1b;
+  transition: all 0.4s ease;
+  border-radius: unset;
+}
+.deposit-btn-trigger:hover {
+	color: #acacac;
+}
+.blur{
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+.modal-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.75);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  z-index: 100;
+}
+.modal-wrapper.open{
+  opacity: 1;
+  visibility: visible;
+}
+.modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 90vw;
+	max-width: 580px;
+	height: auto !important;
+	display: block;
+	position: relative;
+	opacity: 0;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+	z-index: 101;
+	padding-right: 0px !important;
+	float: none !important;
+	-webkit-mask-image: -webkit-radial-gradient(white, white);
+}
+.modal-wrapper.open .modal {
+  opacity: 1;
+  margin-top: 50px;
+}
+.head {
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.7);
+  padding-right: unset !important;
+  margin-bottom: 0px !important;
+}
+.head h1 {
+  font-size: 24px;
+  float: left !important;
+  width: auto !important;
+  padding-left: 20px;
+  margin-bottom: 0 !important;
+  margin-top: 14px !important;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+.content {
+  	padding: 8px 20px 20px 20px !important;
+	background: rgba(255, 255, 255, 0.9);
+}
+.content p {
+  margin-bottom: 10px !important;
+}
+.btn-close {
+  width: 32px;
+  height: 32px;
+  display: block;
+  float: right;
+  background: transparent;
+  margin-top: 10px;
+  padding: 0;
+}
+.btn-close::before, .btn-close::after {
+  content: '';
+  width: 17px;
+  height: 2px;
+  display: block;
+  background: #fff;
+}
+.btn-close::before {
+  margin-top: 12px;
+  -webkit-transform:rotate(45deg);
+  -moz-transform:rotate(45deg);
+  -o-transform:rotate(45deg);
+  transform:rotate(45deg);
+}
+.btn-close::after {
+  margin-top:-2px;
+  -webkit-transform:rotate(-45deg);
+  -moz-transform:rotate(-45deg);
+  -o-transform:rotate(-45deg);
+  transform:rotate(-45deg);
+}
 /*-----------FOOTER STYLES----------*/
 
 footer {
@@ -1030,7 +1189,7 @@ footer p {
 }
 /*For ultrawide screen*/
 @media only screen and (min-width: 2000px){
-	.left_tickets .tickets_overlay,
+	.left_tickets .loverlay,
 	.right_private .private_overlay {
 		background-size: auto 200%;
 	}
@@ -1181,6 +1340,9 @@ footer p {
 	}
 	.tickets .package_info {
 	    min-height: 720px;
+	}
+	.modal {
+		max-width: 360px;
 	}
 }
 @media only screen and (max-width: 479px){
