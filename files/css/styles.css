@@ -944,7 +944,7 @@ img.coming_soon {
 	width: 100%;
 }
 .contact .cartier-list-container .text-input {
-	background: rgba(255, 255, 255, 0.1);
+	background: rgb(255 255 255 / 48%);
 }
 .contact .cartier-list-container textarea.text-input{
 	height: 100px;
@@ -952,9 +952,6 @@ img.coming_soon {
 .button_container {
 	float: left;
 	width: 100%;	
-}
-::placeholder {
-	color: #acacac;
 }
 /*-----------SIGN UP SECTION STYLES----------*/
 .sign_up {
@@ -972,7 +969,10 @@ img.coming_soon {
 	width: 100%;
 	border-radius: unset;
 	caret-color: #fff;
-	color: #fff;
+	color: #000;
+}
+.contact .cartier-list-container .text-input::placeholder {
+	color: #3b3b3b;
 }
 .sign-up-button {
 	display: block;
