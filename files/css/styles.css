@@ -1061,9 +1061,9 @@ img.coming_soon {
 	width: 100%;
 	border-radius: unset;
 	caret-color: #fff;
-	color: #000;
+	color: #fff !important;
 }
-.sign-up .cartier-list-container,
+/*.sign-up .cartier-list-container,
 .sign-up .cartier-list-container input,
 .sign-up .cartier-list-container button {
 	border: 1px solid rgb(210 167 34);
@@ -1072,7 +1072,7 @@ img.coming_soon {
 .sign-up .cartier-list-container p,
 .sign-up .cartier-list-container h2 {
 	color: rgb(210 167 34);
-}
+}*/
 .contact .cartier-list-container .text-input::placeholder {
 	color: #d6d6d6;
 }
