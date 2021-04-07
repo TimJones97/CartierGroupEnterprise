@@ -192,6 +192,7 @@ a:hover {
 }
 .navbar.small .icon-row {
 	opacity: 1;
+	pointer-events: all;
 }
 /*---------END SMALL STYLES-------*/
 
@@ -200,6 +201,7 @@ a:hover {
 	right: 100px;
 	opacity: 0;
 	transition: all 0.5s ease;
+	pointer-events: none;
 }
 
 /* ANIMATED X */
@@ -316,6 +318,7 @@ section {
 	letter-spacing: 2px;
 	z-index: 2;
 	transition: all 0.5s ease;
+	border-radius: 7px;
 }
 .ticket-button:hover {
 	color: #000;
@@ -784,6 +787,7 @@ figure:hover {
 	font-weight: 400;
 	box-shadow: 2px 3px 26px 8px rgba(0,0,0,0.75);
 	transition: all 0.5s ease;
+	border-radius: 7px;
 }
 .tickets .full_width .package_info {
   	height: 770px;
@@ -849,6 +853,7 @@ figure:hover {
     margin-top: 40px;
     margin-bottom: 10px;
     transition: all 0.5s ease;
+	border-radius: 7px;
 }
 .left_tickets .ticket-button-small {
     border: 1px solid #000;
@@ -910,6 +915,8 @@ figure:hover {
 .faq {
 	height: auto;
 	background: #e7e7e7;
+}
+.faq h1 {
 }
 ul { 
 	list-style-type: none; 
@@ -1039,7 +1046,7 @@ img.coming_soon {
 	width: 100%;	
 }
 /*-----------SIGN UP SECTION STYLES----------*/
-.sign_up {
+.sign-up {
 	height: auto;
 	background: #000;
 	padding-bottom: 50px;
@@ -1056,8 +1063,18 @@ img.coming_soon {
 	caret-color: #fff;
 	color: #000;
 }
+.sign-up .cartier-list-container,
+.sign-up .cartier-list-container input,
+.sign-up .cartier-list-container button {
+	border: 1px solid rgb(210 167 34);
+	color: rgb(210 167 34);
+}
+.sign-up .cartier-list-container p,
+.sign-up .cartier-list-container h2 {
+	color: rgb(210 167 34);
+}
 .contact .cartier-list-container .text-input::placeholder {
-	color: #b8b5b5;
+	color: #d6d6d6;
 }
 .sign-up-button {
 	display: block;
