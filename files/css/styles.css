@@ -421,8 +421,57 @@ section {
 	margin: 0 auto;
 	color: #fff;
 	background: #1b1b1b;
-/*	border-bottom-right-radius: 7px;
-	border-bottom-left-radius: 7px;*/
+	border-radius: 7px;
+	margin-top: 20px;
+}
+.gallery-container {
+	position: fixed;
+	background: rgba(0, 0, 0, 0.5);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+    pointer-events: none;
+    transition: all 0.6s ease;
+    opacity: 0;
+    z-index: 2;
+}
+.gallery-container.show {
+    pointer-events: all;
+	opacity: 1;
+}
+.gallery {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+   	transform: translateZ(0) scale3d(0.8, 0.8, 1) translate(-50%, -50%);
+    width: 90vw;
+    height: 70vh;
+    max-width: 1200px;
+    max-height: 900px;
+    background: #fff;
+    transition: all 0.6s ease;
+   	backface-visibility: hidden;
+   	overflow: hidden;
+   	border: 20px solid #f7f7f7;
+   	border-radius: 7px;
+}
+.gallery-container.show .gallery {
+   	transform: translateZ(0) scale3d(1.0, 1.0, 1) translate(-50%, -50%);
+}
+.gallery img,
+.gallery video {
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 100%;
+    min-width: 100%;
+    opacity: 0;
+}
+.gallery img.display,
+.gallery video.display {
+	opacity: 1;
 }
 /*.first, .second, .third, .fourth {
 	opacity: 0;
@@ -458,18 +507,49 @@ figure:hover {
 }*/
 
 /*----OWL CAROUSEL STYLES----*/
+
 .owl-carousel {
 	overflow: hidden;
-	padding-top: 30px;
-/*	border-top-right-radius: 7px;
-	border-top-left-radius: 7px;*/
-	height: 375px;
+	border-radius: 7px;
+	height: 325px;
 	width: 670px;
 	margin: 0 auto;
-	border-top: 20px solid #1b1b1b;
-	border-right: 20px solid #1b1b1b;
-	border-left: 20px solid #1b1b1b;
 	background: #1b1b1b;
+    box-shadow: 0px 3px 10px #00000033;
+}
+.owl-prev {
+    width: 15px;
+    height: 100px;
+    position: absolute;
+    top: 40%;
+    margin-left: -20px;
+    display: block !important;
+    border:0px solid black;
+}
+.owl-next {
+    width: 15px;
+    height: 100px;
+    position: absolute;
+    top: 40%;
+    right: 0px;
+    display: block !important;
+    border:0px solid black;
+}
+.owl-prev, 
+.owl-next { 
+	width: 25px;
+	height: 25px;
+}
+.owl-theme .owl-nav [class*=owl-]:hover { 
+	background: unset;
+}
+.owl-prev i, 
+.owl-next i { 
+	color: #acacac;
+}
+.owl-prev i:before, 
+.owl-next i:before {
+    font-size: 30px;
 }
 .owl-carousel .owl-stage-outer {
 	height: 325px;
@@ -492,12 +572,23 @@ figure:hover {
     background: #fff;
 }
 .owl-carousel .item {
+	cursor: pointer;
 	animation: kenburns 20s infinite linear alternate;
+	-webkit-user-select: none;
+	  -khtml-user-select: none;
+	  -moz-user-select: none;
+	  -o-user-select: none;
+	  user-select: none;
 }
 /*animation: kenburns 110s infinite linear;*/
 .owl-carousel .item img {
 	width: 100%;
 	height: 100%;
+	-webkit-user-select: none;
+	  -khtml-user-select: none;
+	  -moz-user-select: none;
+	  -o-user-select: none;
+	  user-select: none;
 }
 /* Rotate is needed for IE, otherwise it is jumpy */
 @keyframes kenburns {
@@ -822,24 +913,12 @@ figure:hover {
 ul { 
 	list-style-type: none; 
 }
-/*.faq .pull_left,
-.faq .pull_right {
-	width: 45%;
-}
-.faq .pull_left {
-	float: left;
-}
-.faq .pull_right {
-	float: right;
-}*/
 .accordion {
-  width: 90vw;
-  max-width: 490px;
-  margin: 0 auto;
-  background: #f4f4f4;
-  /*-webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;*/
+	width: 90vw;
+	max-width: 490px;
+	margin: 0 auto;
+	background: #f4f4f4;
+	border-radius: 7px;
 }
 .accordion .link {
   cursor: pointer;
@@ -890,8 +969,8 @@ ul {
 .submenu {
   display: none;
   background: #1b1b1b;
-/*  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;*/
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
   font-size: 14px;
 }
 .submenu li { 
@@ -1190,9 +1269,12 @@ footer p {
 }
 /*For ultrawide screen*/
 @media only screen and (min-width: 2000px){
-	.left_tickets .loverlay,
+	.left_tickets .tickets_overlay,
 	.right_private .private_overlay {
 		background-size: auto 200%;
+	}
+	.parallax-wrapper {
+		top: -200px;
 	}
 }
 @media only screen and (max-width: 991px){

@@ -264,7 +264,37 @@ function createCarousel(){
         autoplaySpeed: 2000,
         animateOut: 'fadeOut',
         margin: 100,
-	    items: 1
+        nav: true,
+	    items: 1,
+	    navText : ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+	    mouseDrag: false
+	});
+}
+function openGalleryFromCarousel(){
+	var current_elem;
+	$('.owl-carousel .item').click(
+		function(){
+			var $this = $(this).children().first()
+	    	var current_id = $this.attr('id');
+			$('.gallery-container').addClass('show');
+			// id five is the video, always
+			if(current_id == 'five'){
+				current_elem = $('.gallery #five');
+				current_elem.addClass('display');
+			} else {
+				$('.gallery img').each(function(){
+					if($(this).attr('id') == current_id){
+						current_elem = $(this);
+						current_elem.addClass('display');
+					}
+				})
+			}
+		}
+	);
+	// Close gallery on click
+	$('.gallery-container').click(function(){
+		current_elem.removeClass('display');
+		$(this).removeClass('show');
 	})
 }
 function writeLiveReload(){
@@ -281,12 +311,14 @@ $(document).ready(function(){
 	var pathname = window.location.pathname.split('/');
 	pathname = pathname[pathname.length-2] + '/' + pathname[pathname.length-1]
 	console.log(pathname);
-	if(pathname == 'CartierGroupEnterprise/' || pathname == 'CartierGroupEnterprise/index.html'){
+
+	if(pathname == 'CartierGroupEnterprise/' || pathname == 'CartierGroupEnterprise/index.html' || pathname == '/'){
 		checkIfElementsVisible();
 		createCarousel();
 		hoverEffects();
 		createCanvas();
 	}
+	openGalleryFromCarousel();
 	smallNavOnScroll();
 	setCopyrightYear();
 	hideNavOnTap();
