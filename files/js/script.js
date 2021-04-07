@@ -147,39 +147,44 @@ function bindVelocity(){
 		e.stopPropagation();
 		// set target to anchor's "href" attribute
 		if(target == "#contact-vip") {
-		  $("#message").val("Hello, I'd like to enquire about the availability of VIP access. ");    
-		  target = "#contact";  
-		  setTimeout(function(){
-		    $( "#message" ).focus();
-		  }, 1200);  
+		  	$("#message").val("Hello, I'd like to enquire about the availability of VIP access. ");    
+		  	target = "#contact";  
+		  	setTimeout(function(){
+		    	$( "#message" ).focus();
+		  	}, 1200);  
 		}
 		if(target == "#contact-yacht") {
-		  $("#message").val("Hello, I'd like to enquire about the yacht deposit and fees. ");    
-		  target = "#contact";  
-		  setTimeout(function(){
-		    $( "#message" ).focus();
-		  }, 1200);  
+		  	$("#message").val("Hello, I'd like to enquire about the yacht deposit and fees. ");    
+		  	target = "#contact";  
+		  	setTimeout(function(){
+		    	$( "#message" ).focus();
+		  	}, 1200);  
 		}
 		if(target == "#contact-private") {
-		  $("#message").val("Hello, I'd like to enquire about booking a private event. ");    
-		  target = "#contact";  
-		  setTimeout(function(){
-		    $( "#message" ).focus();
-		  }, 1200);  
+		  	$("#message").val("Hello, I'd like to enquire about booking a private event. ");    
+		  	target = "#contact";  
+		  	setTimeout(function(){
+		    	$( "#message" ).focus();
+		  	}, 1200);  
 		}
 		if(target == "#contact-depart") {
-		  $("#message").val("Hello, I'd like to enquire about docking elsewhere. ");    
-		  target = "#contact";  
-		  setTimeout(function(){
-		    $( "#message" ).focus();
-		  }, 1200);  
+		  	$("#message").val("Hello, I'd like to enquire about docking elsewhere. ");    
+		  	target = "#contact";  
+		  	setTimeout(function(){
+		    	$( "#message" ).focus();
+		  	}, 1200);  
 		}
 		if(target == "#contact-video") {
-		  $("#message").val("Hello, I'd like to enquire about the pricing for a videographer. ");    
-		  target = "#contact";  
-		  setTimeout(function(){
-		    $( "#message" ).focus();
-		  }, 1200);  
+		  	$("#message").val("Hello, I'd like to enquire about the pricing for a videographer. ");    
+		  	target = "#contact";  
+		  	setTimeout(function(){
+		    	$( "#message" ).focus();
+		  	}, 1200);  
+		}
+		if(target == "#sign_up") {
+			setTimeout(function(){
+		    	$( "#first-name" ).focus();
+		  	}, 1200);  
 		}
 		// if(target == "#package-two-contact") {
 		//   $("#message").val("Hello, I'd like to book the Destination package. ");    
@@ -272,22 +277,25 @@ function createCarousel(){
 }
 function openGalleryFromCarousel(){
 	var current_elem;
+	var window_width = $(window).width()
 	$('.owl-carousel .item').click(
 		function(){
-			var $this = $(this).children().first()
-	    	var current_id = $this.attr('id');
-			$('.gallery-container').addClass('show');
-			// id five is the video, always
-			if(current_id == 'five'){
-				current_elem = $('.gallery #five');
-				current_elem.addClass('display');
-			} else {
-				$('.gallery img').each(function(){
-					if($(this).attr('id') == current_id){
-						current_elem = $(this);
-						current_elem.addClass('display');
-					}
-				})
+			if(window_width > 767){
+				var $this = $(this).children().first()
+		    	var current_id = $this.attr('id');
+				$('.gallery-container').addClass('show');
+				// id five is the video, always
+				if(current_id == 'five'){
+					current_elem = $('.gallery #five');
+					current_elem.addClass('display');
+				} else {
+					$('.gallery img').each(function(){
+						if($(this).attr('id') == current_id){
+							current_elem = $(this);
+							current_elem.addClass('display');
+						}
+					})
+				}
 			}
 		}
 	);
