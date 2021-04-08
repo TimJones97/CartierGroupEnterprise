@@ -100,7 +100,7 @@ a:hover {
 /*Enable for debugging*/
 .preloader-white, .pace, .pace-inactive, .cge_loader {
 	transition: all 0.7s ease-in-out;
-	display: none !important;
+	/*display: none !important;*/
 }
 /*END LOADER*/
 .navbar {
