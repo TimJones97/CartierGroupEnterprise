@@ -112,7 +112,7 @@ a:hover {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 999;
+    z-index: 2;
     transition: all 0.5s ease;
 }
 .nav {
@@ -1124,6 +1124,7 @@ img.coming_soon {
 	margin: 0 auto;
 	margin-top: 300px;
 	margin-bottom: 50px;
+  	z-index: 1;
 }
 #paypal-button-container {
   margin-bottom: 0px;
@@ -1281,6 +1282,9 @@ footer {
 .icon-row img:hover {
 	transform: scale(1.1);
 }
+.icon-row.mobile {
+	display: none;
+}
 footer p {
 	margin: 0;
 	color: #acacac;
@@ -1342,6 +1346,16 @@ footer p {
 	}
 	.navbar .nav {
 		background: rgba(255, 255, 255, 0.95);
+	}
+	.navbar .icon-row.mobile {
+	    position: absolute;
+	    right: 100px;
+	    top: 45px;
+	    left: 20px;
+	    opacity: 1;
+    	pointer-events: all;
+    	width: auto;
+    	display: block;
 	}
 	.text-input {
 	    width: 100%;
