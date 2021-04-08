@@ -100,7 +100,7 @@ a:hover {
 /*Enable for debugging*/
 .preloader-white, .pace, .pace-inactive, .cge_loader {
 	transition: all 0.7s ease-in-out;
-	/*display: none !important;*/
+	display: none !important;
 }
 /*END LOADER*/
 .navbar {
@@ -295,7 +295,7 @@ section {
     width: 100%;
 }
 .overlay {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -1463,6 +1463,9 @@ footer p {
 		opacity: 0;
 		pointer-events: none !important;
 	}
+	img.coming_soon {
+		width: 350px;
+	}
 }
 @media only screen and (max-width: 479px){
 	.image-container {
@@ -1487,13 +1490,13 @@ footer p {
 		padding: 20px;
 	}
 	.owl-carousel {
-		height: 232px;
-		width: 360px;
+		height: 198px;
+		width: 350px;
 	}
 	.owl-carousel .owl-stage-outer {
-		height: 182px;
+		height: 198px;
 	}
 	.about .text-container .merch-text {
-		width: 360px;
+		width: 350px;
 	}
 }
