@@ -19,8 +19,9 @@ function smallNavOnScroll(){
 		}
 	});
 }
-function setLoaderHeight(){
+function setElementHeight(){
 	$('.cge_loader').css('height', $(window).innerHeight() + 'px');
+	$('.overlay').css('height', $(window).height() + 'px');
 }
 function createCanvas() {
   // set up our WebGL context and append the canvas to our wrapper
@@ -300,6 +301,7 @@ function writeLiveReload(){
 }
 $(window).resize(function(){
 	$(document).scrollTop($(document).scrollTop() + 1);
+	setElementHeight();
 });
 $(document).ready(function(){
 	// Scroll 1 pixel to properly calibrate the parallax elements
@@ -314,7 +316,7 @@ $(document).ready(function(){
 		hoverEffects();
 		createCanvas();
 	}
-	setLoaderHeight();
+	setElementHeight();
 	openGalleryFromCarousel();
 	smallNavOnScroll();
 	setCopyrightYear();
