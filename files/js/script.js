@@ -19,21 +19,8 @@ function smallNavOnScroll(){
 		}
 	});
 }
-function isCollapsed(){
-	if($(window).width() < 1200){
-		return true;
-	}
-	else {
-		return false;
-	}
-}
 function setLoaderHeight(){
-	if(isCollapsed()){
-		$('.cge_loader').css('height', $(window).innerHeight() + 'px');
-	}
-	else {
-		$('.cge_loader').css('height', 'auto');
-	}
+	$('.cge_loader').css('height', $(window).innerHeight() + 'px');
 }
 function createCanvas() {
   // set up our WebGL context and append the canvas to our wrapper
