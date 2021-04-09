@@ -1319,9 +1319,6 @@ footer p {
 		max-width: 700px;
 		width: 100% !important;
 	}
-	/*#canvas.mobile canvas {
-		display: block;
-	}*/
 	/*-----NAVBAR-----*/
 	.navbar-brand {
 		display: block;
@@ -1424,6 +1421,9 @@ footer p {
     .navbar .nav-item .nav-link {
     	padding: 0;
     }
+    .navbar .icon-row.desktop {
+    	display: none;
+	}
     .contact .cartier-list-container {
         padding: 10px;
     }
@@ -1454,6 +1454,7 @@ footer p {
 	.left_tickets .tickets_overlay h1, 
 	.right_private .private_overlay h1 {
 		min-width: 360px;		
+		font-size: 25px;
 	}
 	.owl-carousel {
 		height: 375px;
@@ -1478,16 +1479,21 @@ footer p {
 	img.coming_soon {
 		width: 350px;
 	}
+	h1, h2 {
+	    font-size: 25px;
+	}
 }
 @media only screen and (max-width: 479px){
 	.image-container {
 		display: block;
 	}
-	.text-container h1, h2 {
+	h1, h2 {
 		margin-top: 20px;
+	    font-size: 25px;
 	}
 	.parallax {
 	    height: 180vh;
+	    top: -100px;
 	}
 	footer p {
 	    font-size: 13px;

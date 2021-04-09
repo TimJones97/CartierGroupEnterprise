@@ -21,7 +21,7 @@ function smallNavOnScroll(){
 }
 function setElementHeight(){
 	$('.cge_loader').css('height', $(window).innerHeight() + 'px');
-	$('.overlay').css('height', $(window).height() + 'px');
+	$('.pattern_overlay').css('height', $(window).height() + 'px');
 }
 function createCanvas() {
   // set up our WebGL context and append the canvas to our wrapper
