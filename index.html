@@ -44,6 +44,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
 
     <script>document.write('<link rel="stylesheet" type="text/css" href="./files/css/styles.css?v=' + Date.now() + '"\/>');</script>
+
+    <!-- Glitch animation -->
+    <link rel="stylesheet" type="text/css" href="./files/css/glitch.css"/>
     <title>Cartier Group Enterprise</title>
   </head>
   <body>
@@ -108,8 +111,12 @@
       </video>
       <div class="pattern_overlay">
       </div>
-      <div class="plane">
-        <img draggable="false"  src="/files/img/cge_banner_transparent.png"/>
+      <div class="glitch">
+          <div class="glitch__item"></div>
+          <div class="glitch__item"></div>
+          <div class="glitch__item"></div>
+          <div class="glitch__item"></div>
+          <div class="glitch__item"></div>
       </div>
       <div class="overlay">
       </div>
@@ -129,16 +136,16 @@
         <div class="image-container">
           <div id="owl-carousel" class="owl-carousel owl-theme">
             <div class="item">
-              <img draggable="false"  id="one" src="./files/img/carousel/front_one.jpg">
+              <img draggable="false"  id="one" src="./files/img/carousel/full-size/front_one.jpg">
             </div>
             <div class="item">
-              <img draggable="false"  id="two" src="./files/img/carousel/front_two.jpg">
+              <img draggable="false"  id="two" src="./files/img/carousel/full-size/front_two.jpg">
             </div>
             <div class="item">
-              <img draggable="false"  id="three" src="./files/img/carousel/front_three.jpg">
+              <img draggable="false"  id="three" src="./files/img/carousel/full-size/front_three.jpg">
             </div>
             <div class="item">
-              <img draggable="false"  id="four" src="./files/img/carousel/front_four.jpg">
+              <img draggable="false"  id="four" src="./files/img/carousel/full-size/front_four.jpg">
             </div>
             <div class="item">
               <video id="five" class="carousel_video" muted loop="loop" autoplay playsinline>
@@ -146,16 +153,21 @@
               </video>
             </div>
             <div class="item">
-              <img draggable="false"  id="six" src="./files/img/carousel/front_six.jpg">
+              <img draggable="false"  id="six" src="./files/img/carousel/full-size/front_six.jpg">
             </div>
             <div class="item">
-              <img draggable="false"  id="seven" src="./files/img/carousel/front_seven.jpg">
+              <img draggable="false"  id="seven" src="./files/img/carousel/full-size/front_seven.jpg">
+            </div>
+            <div class="item">
+              <img draggable="false"  id="seven" src="./files/img/carousel/full-size/front_eight.jpg">
             </div>
           </div>
         </div>
-        <p class="merch-text">
-          Exclusive merch coming soon! Sign up <a href="#sign-up">here</a> for updates.
-        </p>
+        <a href="#sign-up">
+          <p class="merch-text">
+            Exclusive merch coming soon! Sign up here for updates.
+          </p>
+        </a>
         <div class="gallery-container">
           <div class="gallery">
               <img draggable="false"  id="one" src="./files/img/carousel/full-size/front_one.jpg">
@@ -167,6 +179,7 @@
               </video>
               <img draggable="false"  id="six" src="./files/img/carousel/full-size/front_six.jpg">
               <img draggable="false"  id="seven" src="./files/img/carousel/full-size/front_seven.jpg">
+              <img draggable="false"  id="seven" src="./files/img/carousel/full-size/front_eight.jpg">
           </div>
         </div>
     </section>
