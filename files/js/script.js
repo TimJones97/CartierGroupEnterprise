@@ -1,5 +1,3 @@
-var webGLCurtain;
-
 function smallNavOnScroll(){
 	//Check on the navbar on start
 	var scrollTop = $(document).scrollTop();
@@ -22,39 +20,6 @@ function smallNavOnScroll(){
 function setElementHeight(){
 	$('.cge_loader').css('height', $(window).innerHeight() + 'px');
 	$('.pattern_overlay').css('height', $(window).height() + 'px');
-}
-function createCanvas() {
-  // set up our WebGL context and append the canvas to our wrapper
-  var webGLCurtain = new Curtains({
-    container: "canvas"
-  });
-  // if there's any error during init, we're going to catch it here
-  webGLCurtain.onError(function() {
-    // we will add a class to the document body to display original images
-    // document.body.classList.add("no-curtains");
-  });
-  // get our plane element
-  var planeElement = document.getElementsByClassName("plane")[0];
-  // set our initial parameters (basic uniforms)
-  var params = {
-    vertexShaderID: "plane-vs", // our vertex shader ID
-    fragmentShaderID: "plane-fs", // our framgent shader ID
-    //crossOrigin: "", // codepen specific
-    uniforms: {
-      time: {
-        name: "uTime", // uniform name that will be passed to our shaders
-        type: "1f", // this means our uniform is a float
-        value: 0,
-      },
-    }
-  }
-  // create our plane mesh
-  var plane = webGLCurtain.addPlane(planeElement, params);
-  // if our plane has been successfully created
-  // we use the onRender method of our plane fired at each requestAnimationFrame call
-  plane && plane.onRender(function() {
-    plane.uniforms.time.value++; // update our time uniform value
-  });
 }
 function setCopyrightYear(){
 	var theDate = new Date(); 
@@ -258,6 +223,7 @@ function createCarousel(){
         autoplaySpeed: 2000,
         animateOut: 'fadeOut',
         margin: 100,
+        smartSpeed: 700,
         nav: true,
 	    items: 1,
 	    navText : ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],
@@ -269,29 +235,34 @@ function openGalleryFromCarousel(){
 	var window_width = $(window).width()
 	$('.owl-carousel .item').click(
 		function(){
-			if(window_width > 767){
-				var $this = $(this).children().first()
-		    	var current_id = $this.attr('id');
-				$('.gallery-container').addClass('show');
-				// id five is the video, always
-				if(current_id == 'five'){
-					current_elem = $('.gallery #five');
+			var $this = $(this).children().first()
+	    	var current_id = $this.attr('id');
+			$('.gallery-container').addClass('show');
+			// id five is the video, always
+			$('.gallery div').each(function(){
+				if($(this).attr('id') == current_id){
+					current_elem = $(this);
 					current_elem.addClass('display');
-				} else {
-					$('.gallery img').each(function(){
-						if($(this).attr('id') == current_id){
-							current_elem = $(this);
-							current_elem.addClass('display');
-						}
-					})
 				}
-			}
+			})
+			$('body').addClass('gallery_open');
 		}
 	);
-	// Close gallery on click
-	$('.gallery-container').click(function(){
-		current_elem.removeClass('display');
-		$(this).removeClass('show');
+	$('.gallery div picture').hover(
+	    function() {
+	      $("picture").not(this).addClass("small");
+	    },
+	     function() {
+	      $("picture").not(this).removeClass("small");
+	    },
+	  );
+	//Close gallery on click
+	$('.gallery-container').click(function(event){
+	    if(event.target == $('.gallery-container')[0]){
+			current_elem.removeClass('display');
+			$(this).removeClass('show');
+			$('body').removeClass('gallery_open');
+		}
 	})
 }
 function writeLiveReload(){
@@ -308,13 +279,11 @@ $(document).ready(function(){
 	$(document).scrollTop($(document).scrollTop() + 1);
 	var pathname = window.location.pathname.split('/');
 	pathname = pathname[pathname.length-2] + '/' + pathname[pathname.length-1]
-	console.log(pathname);
 
 	if(pathname == 'CartierGroupEnterprise/' || pathname == 'CartierGroupEnterprise/index.html' || pathname == '/'){
 		checkIfElementsVisible();
 		createCarousel();
 		hoverEffects();
-		createCanvas();
 	}
 	setElementHeight();
 	openGalleryFromCarousel();
