@@ -1508,7 +1508,7 @@ footer p {
 	.left_tickets .tickets_overlay h1, 
 	.right_private .private_overlay h1 {
 		min-width: 360px;		
-		font-size: 25px;
+		font-size: 30px;
 	}
 	.owl-carousel {
 		height: 375px;
