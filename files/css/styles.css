@@ -591,8 +591,8 @@ figure:hover {
 }
 .owl-prev, 
 .owl-next { 
-	width: 25px;
-	height: 25px;
+	width: 50px;
+	height: 50px;
 }
 .owl-theme .owl-nav [class*=owl-]:hover { 
 	background: unset;
