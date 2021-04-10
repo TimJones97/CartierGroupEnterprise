@@ -1,7 +1,29 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Meta tags -->
+    <meta name="viewport" content="width=device-width, user-scalable=no"/>
+    <meta name="title" content="Cartier Group Enterprise | Home">
+    <meta name="description" content="Cartier Group Enterprise brings you the superyacht experience - set sail through the beautiful Gold Coast canals in our luxurious superyacht.">
+    <meta name="keywords" content="Yacht, Party, Oceanview, Apartment, Airbnb, Package, Bundle, Luxury, Premium">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    
+    <!-- Color for Chrome tabs (Android only) -->
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- OpenGraph meta tags -->
+    <meta property="og:title" content="Cartier Group Enterprise | Booking">
+    <meta property="og:site_name" content="Cartier Group Enterprise">
+    <meta property="og:url" content="https://cartiergroupenterprise.com/">
+    <meta property="og:description" content="Cartier Group Enterprise brings you the superyacht experience - set sail through the beautiful Gold Coast canals in our luxurious superyacht.">
+    <meta property="og:type" content="website">
+    <!-- Change later -->
+    <meta property="og:image" content="/files/img/open_graph_logo.png">
+
+    <title>Cartier Group Enterprise | Booking</title>
+    <link rel="shortcut icon" type="image/jpg" href="/files/img/favicon.ico"/>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Montserrat:wght@300;500;700&family=Abril+Fatface&display=swap" rel="stylesheet">
@@ -9,11 +31,19 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+    <!-- Latest OwlCarousel2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+
+    <!-- Latest OwlCarousel2 Theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" />
+
     <!-- Pace.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/black/pace-theme-fill-left.min.css" integrity="sha256-VEKCck3zsvPsLnsyH5ytEpHq5RugkueebWCLJ1g0ykI=" crossorigin="anonymous" />
 
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
+
     <script>document.write('<link rel="stylesheet" type="text/css" href="../files/css/styles.css?v=' + Date.now() + '"\/>');</script>
-    <title>Cartier Group Enterprise</title>
   </head>
   <body>
     <div class="cge_loader">
@@ -59,32 +89,41 @@
       </div>
       <div class="container-center">
         <h1>BOOKING DEPOSIT</h1>
-        <div id="paypal-button-container"></div>
-        <script src="https://www.paypal.com/sdk/js?client-id=AXHNgyB6wp2SC5oS8iqmFz8xVOAqgecTXa28rZuG2GJGLZrSbrQIEhm3lrU97GPpx4uUZCUAf9QH1ivT&currency=AUD"></script>
+        <div id="smart-button-container">
+          <div style="text-align: center;">
+            <div id="paypal-button-container"></div>
+          </div>
+        </div>
+        <script src="https://www.paypal.com/sdk/js?client-id=AXHNgyB6wp2SC5oS8iqmFz8xVOAqgecTXa28rZuG2GJGLZrSbrQIEhm3lrU97GPpx4uUZCUAf9QH1ivT&currency=AUD" data-sdk-integration-source="button-factory"></script>
         <script>
+          function initPayPalButton() {
             paypal.Buttons({
-                style: {
-                    shape: 'rect',
-                    color: 'blue',
-                    layout: 'vertical',
-                    label: 'pay',
-                    
-                },
-                createOrder: function(data, actions) {
-                    return actions.order.create({
-                        purchase_units: [{
-                            amount: {
-                                value: '1000'
-                            }
-                        }]
-                    });
-                },
-                onApprove: function(data, actions) {
-                    return actions.order.capture().then(function(details) {
-                        alert('Transaction completed by ' + details.payer.name.given_name + '!');
-                    });
-                }
+              style: {
+                shape: 'rect',
+                color: 'blue',
+                layout: 'vertical',
+                label: 'paypal',
+                
+              },
+
+              createOrder: function(data, actions) {
+                return actions.order.create({
+                  purchase_units: [{"description":"Yacht Booking Deposit","amount":{"currency_code":"AUD","value":1000}}]
+                });
+              },
+
+              onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                  alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                });
+              },
+
+              onError: function(err) {
+                console.log(err);
+              }
             }).render('#paypal-button-container');
+          }
+          initPayPalButton();
         </script>
         <div class="deposit-details">
           <p>
