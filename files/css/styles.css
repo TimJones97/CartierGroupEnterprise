@@ -624,12 +624,16 @@ figure:hover {
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
     background: #fff;
 }
-.owl-carousel .item {
+.owl-carousel .owl-item .item {
 	cursor: pointer;
-	animation: kenburns 20s infinite linear alternate;
+	pointer-events: none;
+}
+.owl-carousel .owl-item.active .item {
+	pointer-events: all;
 }
 /*animation: kenburns 110s infinite linear;*/
 .owl-carousel .item img {
+	animation: kenburns 20s infinite linear alternate;
 	width: 100%;
 	height: 100%;
 }
