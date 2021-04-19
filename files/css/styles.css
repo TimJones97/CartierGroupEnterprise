@@ -872,8 +872,9 @@ section {
 	color: #000;
 }
 .left_tickets .ticket-button-small:hover {
-	border: 1px solid rgb(210 167 34);
-    color: rgb(210 167 34);
+	border: 1px solid transparent;
+	color: rgb(210 167 34);
+	background: rgba(0,0,0, 0.7);
 }
 .right_private .ticket-button-small {
     margin-top: 80px;
