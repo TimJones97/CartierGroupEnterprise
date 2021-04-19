@@ -30,14 +30,14 @@ function hideNavOnTap(){
 	    $('.navbar-collapse').collapse('hide');
 	});
 }
+
+// Pause the video before everything is loaded
+$('video').trigger('pause');
 Pace.on("done", function(){
   if ($('.pace-progress').attr('data-progress-text') == '100%'){
   	setTimeout(function(){
-  		// $('.pace').removeClass('pace-inactive');
-	   //  $('.cge_loader').fadeOut(1000);
-	   //  $('.preloader-white').fadeOut(1000);
-	   //  $('.pace').fadeOut(1000);
-	    // $('.anim_container').addClass('scale_back');
+  		// Start playing the video
+		$('video').trigger('play');
 	    $('.cge_loader').addClass('anim_slidedown');
 	    $('.preloader-white').addClass('anim_slidedown');
 	    $('.pace').addClass('anim_slidedown');
