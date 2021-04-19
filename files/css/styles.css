@@ -599,7 +599,7 @@ figure:hover {
 }
 .owl-prev i, 
 .owl-next i { 
-	color: #acacac;
+	color: #fff;
 }
 .owl-prev i:before, 
 .owl-next i:before {
