@@ -226,7 +226,7 @@ function openGalleryFromCarousel(){
 			$('.gallery-container').addClass('show');
 			// id five is the video, always
 			$('.gallery div').each(function(){
-				if($(this).attr('id') == current_id){
+				if($(this).attr('class') == current_id){
 					current_elem = $(this);
 					current_elem.addClass('display');
 				}
