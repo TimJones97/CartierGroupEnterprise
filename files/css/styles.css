@@ -434,9 +434,10 @@ section {
 .image-container {
 	margin: 0 auto;
 	margin-top: 30px;
+	padding: 0px 15px;
 }
 .about .text-container .merch-text {
-	width: 670px;
+	width: 100%;
 	margin: 0 auto;
 	color: #fff;
 	background: #1b1b1b;
@@ -528,46 +529,14 @@ section {
 	display: inline-flex;
 	opacity: 1;
 }
-/*.first, .second, .third, .fourth {
-	opacity: 0;
-}
-figure.add_anim {
-	animation: fadeIn 0.4s linear forwards;
-}
-.first {
-	animation-delay: 400ms !important;
-}
-.second {
-	animation-delay: 700ms !important;
-}
-.third {
-	animation-delay: 1000ms !important;
-}
-.fourth {
-	animation-delay: 1300ms !important;
-}
-figure:hover {
-	box-shadow: 2px 3px 26px 8px rgba(93,75,19,0.8);
-	transform: translateZ(0) scale3d(1.05, 1.05, 1);
-}
-@keyframes fadeIn {
-	0% {
-		opacity: 0;
-		transform: scale(1.1);
-	}
-	100% {
-		opacity: 1;
-		transform: scale(1.0);
-	}
-}*/
 
 /*----OWL CAROUSEL STYLES----*/
 
 .owl-carousel {
 	overflow: hidden;
 	border-radius: 7px;
-	height: 325px;
-	width: 670px;
+	height: 450px;
+	width: 100%;
 	margin: 0 auto;
     box-shadow: rgb(0 0 0 / 50%) 0px 3px 10px;
 }
@@ -606,7 +575,6 @@ figure:hover {
     font-size: 50px;
 }
 .owl-carousel .owl-stage-outer {
-	height: 325px;
 	border-radius: 7px;
 }
 .owl-theme .owl-dots {
@@ -643,7 +611,7 @@ figure:hover {
     	transform: scale(1.0) rotate(0.04deg);
 	}
 	100% {
-    	transform: scale(1.3) rotate(0.04deg);
+    	transform: scale(1.25) rotate(0.04deg);
 	}
 }
 /*-----------TICKET SECTION STYLES----------*/
@@ -1515,11 +1483,7 @@ footer p {
 		font-size: 30px;
 	}
 	.owl-carousel {
-		height: 375px;
-		width: 490px;
-	}
-	.about .text-container .merch-text {
-		width: 490px;
+		height: 320px;
 	}
 	.tickets .full_width .package_info {
 	    height: 720px;
@@ -1555,9 +1519,6 @@ footer p {
 	}
 }
 @media only screen and (max-width: 479px){
-	.image-container {
-		display: block;
-	}
 	h1, h2 {
 		margin-top: 20px;
 	    font-size: 25px;
@@ -1580,16 +1541,7 @@ footer p {
 	}
 	.owl-carousel {
 		height: 198px;
-		width: 350px;
-	}
-	.owl-carousel .owl-stage-outer {
-		height: 198px;
-	}
-	.about .text-container .merch-text {
-		width: 350px;
-	}
-	.gallery {
-
+		width: 100%;
 	}
 	.gallery div {
 		height: 100%;
