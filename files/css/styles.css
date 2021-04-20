@@ -977,7 +977,7 @@ ul {
 }
 .accordion li.open .link,
 .accordion li.open i { 
-	color: rgb(177 140 23); 
+	color: #000; 
 }
 .accordion li.open i.fa-chevron-down {
 	color: #000; 
