@@ -146,6 +146,10 @@ function bindVelocity(){
 	      offset: -125
 	    });
     }
+	else {
+		e.preventDefault();
+		e.stopPropagation();
+	}
   });
 }
 function hoverEffects(){
@@ -252,7 +256,7 @@ function openGalleryFromCarousel(){
 	})
 }
 function writeLiveReload(){
-	if(location.host == ''){
+	if(location.host == 'localhost:8000'){
 		document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
 	}
 }
@@ -277,9 +281,11 @@ $(document).ready(function(){
 	setCopyrightYear();
 	hideNavOnTap();
 	bindVelocity();
-	$('.parallax-wrapper').paroller({
-	  factor: '0.2',
-	  type: 'foreground',
-	  direction: 'vertical'
-	}); 
+	setTimeout(function(){
+		$('.parallax-wrapper').paroller({
+		factor: '0.2',
+		type: 'foreground',
+		direction: 'vertical'
+		}); 
+	}, 200);
 });
