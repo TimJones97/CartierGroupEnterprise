@@ -262,17 +262,18 @@ function writeLiveReload(){
 }
 function isMobile(){
 	const width = $("window").innerWidth();
-  if(width > 991){
-	return false;
-  }
+	if(width > 991){
+		return false;
+	}
 	else {
-	return true;
-  }
+		return true;
+	}
 }
 function resizeHero(){
-  	const height = $("window").innerHeight();
+  	const height = window.innerHeight;
 	if(isMobile()){
 	   $(".main-banner").css("height",  height + "px");
+	   console.log(height + "px");
   	}
 	else {
 		$(".main-banner").css("height", "100vh");

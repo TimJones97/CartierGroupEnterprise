@@ -419,7 +419,6 @@ section {
 .image-container {
 	margin: 0 auto;
 	margin-top: 30px;
-	padding: 0px 15px;
 }
 .about .text-container .merch-text {
 	width: 100%;
@@ -1685,7 +1684,7 @@ footer p {
 		font-size: 30px;
 	}
 	.owl-carousel {
-		height: 320px;
+		height: 270px;
 	}
 	.tickets .full_width .package_info {
 	    height: 720px;
