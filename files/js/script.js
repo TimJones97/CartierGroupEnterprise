@@ -260,9 +260,28 @@ function writeLiveReload(){
 		document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
 	}
 }
+function isMobile(){
+	const width = $("window").innerWidth();
+  if(width > 991){
+	return false;
+  }
+	else {
+	return true;
+  }
+}
+function resizeHero(){
+  const height = $("window").innerHeight();
+	if(isMobile()){
+	   $(".main-banner").css("height",  height + "px");
+  }
+	else {
+		$(".main-banner").css("height", "100vh");
+  }
+}
 $(window).resize(function(){
 	$(document).scrollTop($(document).scrollTop() + 1);
 	setElementHeight();
+	resizeHero();
 });
 $(document).ready(function(){
 	// Scroll 1 pixel to properly calibrate the parallax elements
@@ -281,11 +300,12 @@ $(document).ready(function(){
 	setCopyrightYear();
 	hideNavOnTap();
 	bindVelocity();
+	resizeHero();
 	setTimeout(function(){
 		$('.parallax-wrapper').paroller({
-		factor: '0.2',
-		type: 'foreground',
-		direction: 'vertical'
+			factor: '0.2',
+			type: 'foreground',
+			direction: 'vertical'
 		}); 
 	}, 200);
 });
