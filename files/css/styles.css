@@ -404,13 +404,12 @@ section {
 	height: 22px;
 }
 .about .text-container p {
-	margin-bottom: 0px;
+	margin-bottom: 10px;
 }
 .about .text-container p:first-of-type:after {
 	content: "*";
 	vertical-align: top;
 	font-size: 12px;
-	margin-left: -3px;
 }
 .about .text-container .fine-print {
 	font-size: 12px;
