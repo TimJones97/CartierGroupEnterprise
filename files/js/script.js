@@ -270,10 +270,10 @@ function isMobile(){
   }
 }
 function resizeHero(){
-  const height = $("window").innerHeight();
+  	const height = $("window").innerHeight();
 	if(isMobile()){
 	   $(".main-banner").css("height",  height + "px");
-  }
+  	}
 	else {
 		$(".main-banner").css("height", "100vh");
   }
@@ -281,7 +281,6 @@ function resizeHero(){
 $(window).resize(function(){
 	$(document).scrollTop($(document).scrollTop() + 1);
 	setElementHeight();
-	resizeHero();
 });
 $(document).ready(function(){
 	// Scroll 1 pixel to properly calibrate the parallax elements
