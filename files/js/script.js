@@ -17,10 +17,6 @@ function smallNavOnScroll(){
 		}
 	});
 }
-function setElementHeight(){
-	$('.cge_loader').css('height', $(window).innerHeight() + 'px');
-	$('.pattern_overlay').css('height', $(window).height() + 'px');
-}
 function setCopyrightYear(){
 	var theDate = new Date(); 
 	$(".year").text(theDate.getFullYear());
@@ -277,11 +273,10 @@ function resizeHero(){
   	}
 	else {
 		$(".main-banner").css("height", "100vh");
-  }
+  	}
 }
 $(window).resize(function(){
 	$(document).scrollTop($(document).scrollTop() + 1);
-	setElementHeight();
 });
 $(document).ready(function(){
 	// Scroll 1 pixel to properly calibrate the parallax elements
@@ -294,7 +289,6 @@ $(document).ready(function(){
 		createCarousel();
 		hoverEffects();
 	}
-	setElementHeight();
 	openGalleryFromCarousel();
 	smallNavOnScroll();
 	setCopyrightYear();
